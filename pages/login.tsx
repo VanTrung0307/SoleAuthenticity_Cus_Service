@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import Layout from '../layouts/Main'
@@ -7,8 +8,8 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { auth } from '../firebase/config'
 import { UseAuth } from './api/context/AuthContext'
-import Image from 'next/image'
-import { useCallback, useEffect } from 'react'
+
+import { useEffect } from 'react'
 import { axiosClient } from './api/service/api-service'
 
 const LoginPage = () => {
@@ -18,7 +19,7 @@ const LoginPage = () => {
 
   const router = useRouter()
 
-  const handleLoginWithGoogle = useCallback(() => {
+  const handleLoginWithGoogle = () => {
     const provider = new GoogleAuthProvider()
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -43,18 +44,20 @@ const LoginPage = () => {
           })
         })
         toast.success('Login Successful...!!')
+        // router.push("/");
       })
       .catch((error: any) => {
         toast.error(error.message)
       })
-  }, [router, setUser])
+    console.log('result')
+  }
 
   useEffect(() => {
     if (user !== null) {
       handleLoginWithGoogle()
       localStorage.setItem('user', JSON.stringify(user))
     }
-  }, [user, handleLoginWithGoogle])
+  }, [user])
 
   return (
     <Layout>
@@ -62,21 +65,24 @@ const LoginPage = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <div>
-                <a>
-                  <i className="icon-left"></i> Back to store
-                </a>
-              </div>
+              <a>
+                <i className="icon-left"></i> Back to store
+              </a>
             </Link>
           </div>
 
           <div className="form-block">
-            <Image
+            <img
+              style={{
+                width: '300px',
+                height: '225px',
+                marginLeft: '70px',
+                marginTop: '-70px',
+                textAlign: 'center',
+                display: 'flex',
+              }}
               src="/images/jordan.gif"
               alt="Jordan"
-              width={300}
-              height={225}
-              className="my-image"
             />
             <h2 className="form-block__title">Log in</h2>
             <form className="form">
@@ -136,13 +142,12 @@ const LoginPage = () => {
                     <p>Keep me signed in</p>
                   </label>
                 </div>
-                <Link href="/forgot-password">
-                  <div>
-                    <a className="form__info__forgot-password">
-                      Forgot password?
-                    </a>
-                  </div>
-                </Link>
+                <a
+                  href="/forgot-password"
+                  className="form__info__forgot-password"
+                >
+                  Forgot password?
+                </a>
               </div>
 
               <div
@@ -158,7 +163,7 @@ const LoginPage = () => {
                   onClick={handleLoginWithGoogle}
                   style={{ alignItems: 'center' }}
                 >
-                  <Image src="/images/icons/google.svg" alt="google" />
+                  <img src="/images/icons/google.svg" alt="google" />
                   Google
                 </button>
               </div>
@@ -179,12 +184,7 @@ const LoginPage = () => {
               </button>
 
               <p className="form__signup-link">
-                Not a member yet?{' '}
-                <Link href="/register">
-                  <div>
-                    <a>Sign up</a>
-                  </div>
-                </Link>
+                Not a member yet? <a href="/register">Sign up</a>
               </p>
             </form>
           </div>
