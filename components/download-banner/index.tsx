@@ -21,7 +21,7 @@ const Download = () => {
         <div className="download-img">
           <Link href="#">
             <div>
-              <Image
+              <img
                 className="applogo"
                 src="/images/logos/appstore.gif"
                 alt="AppStore"
@@ -32,7 +32,7 @@ const Download = () => {
           </Link>
           <Link href="#">
             <div>
-              <Image
+              <img
                 className="applogo"
                 src="/images/logos/googleplay.gif"
                 alt="GooglePLay"
@@ -43,7 +43,7 @@ const Download = () => {
           </Link>
         </div>
         <div className="logo-left">
-          <Image
+          <img
             className="phone"
             src="/images/logos/phone.gif"
             alt="authen"
@@ -52,12 +52,10 @@ const Download = () => {
           />
         </div>
         <div className="logo-right">
-          <Image
+          <img
             className="authen"
             src="/images/logos/applogo.png"
             alt="authen"
-            width={200}
-            height={200}
           />
         </div>
       </div>

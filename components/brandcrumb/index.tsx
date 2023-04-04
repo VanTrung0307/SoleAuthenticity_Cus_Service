@@ -1,18 +1,13 @@
-import Link from 'next/link'
-import React from 'react'
+/* eslint-disable @next/next/no-html-link-for-pages */
 
 const Brandcrumb = () => (
   <section className="breadcrumb">
     <div className="container">
       <ul className="breadcrumb-list">
         <li>
-          <Link href="/">
-            <div>
-              <a>
-                <i className="icon-home"></i>
-              </a>
-            </div>
-          </Link>
+          <a href="/">
+            <i className="icon-home"></i>
+          </a>
         </li>
         <li>All Brands</li>
       </ul>

@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
 import { BrandTypeList } from 'types'
 
 const BrandItem = ({ id, name, avatar }: BrandTypeList) => {
@@ -8,13 +6,11 @@ const BrandItem = ({ id, name, avatar }: BrandTypeList) => {
     <div className="brand-item">
       <Link href={`/brand/${id}`}>
         <div className="brand__image">
-          <Image
+          <img
             key={id}
             className="brand_img"
             src={avatar}
             alt="product"
-            width={300}
-            height={300}
           />
         </div>
       </Link>

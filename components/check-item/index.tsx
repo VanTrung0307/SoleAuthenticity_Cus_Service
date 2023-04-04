@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleFavProduct } from 'store/reducers/user'
 import { RootState } from 'store'
 import { CheckTypeList } from 'types'
-import Image from 'next/image'
 
 const CheckItem = ({ status, images, id, name }: CheckTypeList) => {
   const dispatch = useDispatch()
@@ -32,15 +31,11 @@ const CheckItem = ({ status, images, id, name }: CheckTypeList) => {
         </button>
 
         <Link href={`/check/${id}`}>
-          <div>
-            <Image
+          <a>
+            <img
+              style={{ borderRadius: '30px' }}
               src={images ? images[0] : ''}
               alt="product"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-              className="product-image"
-              style={{borderRadius: '30px'}}
             />
             {status && (
               <span
@@ -59,7 +54,7 @@ const CheckItem = ({ status, images, id, name }: CheckTypeList) => {
                 {status}
               </span>
             )}
-          </div>
+          </a>
         </Link>
       </div>
 

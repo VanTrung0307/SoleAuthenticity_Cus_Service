@@ -1,7 +1,5 @@
-import React from 'react'
+import SwiperCore, { Navigation, Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Scrollbar, Navigation } from 'swiper'
-import Image from 'next/image'
 
 SwiperCore.use([Scrollbar, Navigation])
 
@@ -17,8 +15,8 @@ const Gallery = ({ images }: any) => {
           <section className="product-gallery">
             <div className="product-gallery__thumbs">
               {images.map((image: any) => (
-                <div key={image?.id} className="product-gallery__thumb">
-                  <Image
+                <div key={image?.id} className="product-gallery__thumb" style={{borderRadius: '10px'}}>
+                  <img
                     onError={({ currentTarget }) => {
                       currentTarget.onerror = null // prevents looping
                       currentTarget.src =
@@ -29,7 +27,7 @@ const Gallery = ({ images }: any) => {
                       'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
                     }
                     alt=""
-                    layout="fill"
+                    style={{borderRadius: '10px'}}
                   />
                 </div>
               ))}
@@ -46,24 +44,21 @@ const Gallery = ({ images }: any) => {
               }}
             >
               {images.map((image: any) => (
-                <SwiperSlide
-                  key={image.id}
-                  style={{ maxHeight: '500px', maxWidth: '500px' }}
-                >
+                // eslint-disable-next-line react/jsx-key
+                <SwiperSlide style={{ maxHeight: '500px', maxWidth: '500px' }}>
                   <div key={image.id}>
-                    <Image
+                    <img
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null // prevents looping
+                        currentTarget.src =
+                          'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
+                      }}
                       src={
                         image.imgPath ??
                         'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
                       }
                       alt=""
-                      width={500}
-                      height={500}
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null
-                        currentTarget.src =
-                          'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
-                      }}
+                      style={{ width: '500px', height: '500px', borderRadius: '30px' }}
                     />
                   </div>
                 </SwiperSlide>
@@ -72,7 +67,7 @@ const Gallery = ({ images }: any) => {
           </section>
         </>
       ) : (
-        <Image
+        <img
           onError={({ currentTarget }) => {
             currentTarget.onerror = null // prevents looping
             currentTarget.src =
@@ -82,8 +77,7 @@ const Gallery = ({ images }: any) => {
             'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
           }
           alt=""
-          width={500}
-          height={500}
+          style={{ width: '500px', height: '500px' }}
         />
       )}
     </>

@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 // import { GetServerSideProps } from "next";
-import Link from 'next/link'
-import React from 'react'
 import { ProductTypeList } from 'types'
 
 type ProductCrumbType = {
@@ -13,20 +12,16 @@ const Productcrumb = ({ product }: ProductCrumbType) => {
       <div className="container">
         <ul className="breadcrumb-list">
           <li>
-            <Link href="/">
-              <div>
-                <a>
-                  <i className="icon-home"></i>
-                </a>
-              </div>
-            </Link>
+            <div>
+              <a href="/">
+                <i className="icon-home"></i>
+              </a>
+            </div>
           </li>
           <li>
-            <Link href="/products">
-              <div>
-                <a>All Products</a>
-              </div>
-            </Link>
+            <div>
+              <a href="/products">All Products</a>
+            </div>
           </li>
           <li>
             <a>{product.name}</a>

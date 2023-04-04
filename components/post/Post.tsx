@@ -1,5 +1,6 @@
+// import Link from "next/link";
+// import dayjs from "dayjs";
 import Link from 'next/link'
-import Image from 'next/image'
 
 interface PostProps {
   productId: number
@@ -28,15 +29,15 @@ export default function Post(props: PostProps) {
         }}
       >
         <Link href={`/review/${rid}`}>
-          <div>
-            <Image
+          <a>
+            <img
+              style={{
+                borderRadius: '30px 30px 0px 0px',
+                width: '100%',
+                height: '200px',
+              }}
               src={props.avatar}
               alt="product"
-              width={300}
-              height={200}
-              layout="responsive"
-              objectFit="cover"
-              className="rounded-t-3xl"
             />
 
             {props.tag && (
@@ -54,7 +55,7 @@ export default function Post(props: PostProps) {
                 {props.tag}
               </span>
             )}
-          </div>
+          </a>
         </Link>
 
         <Link href={`/review/${rid}`}>

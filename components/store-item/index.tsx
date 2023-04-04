@@ -1,8 +1,42 @@
-import Image from 'next/image'
 import Link from 'next/link'
+// import { some } from "lodash";
+// import { useDispatch, useSelector } from "react-redux";
+// import { toggleFavProduct } from "store/reducers/user";
+// import { RootState } from "store";
+// import { useEffect, useState } from "react";
 import { StoreTypeList } from 'types'
 
 const StoreItem = ({ id, name, address, avatar }: StoreTypeList) => {
+  // const dispatch = useDispatch();
+  // const { favProducts } = useSelector((state: RootState) => state.user);
+
+  // const isFavourite = some(favProducts, (storeId) => storeId === id);
+
+  // const [data, setData] = useState<StoreTypeList>();
+  // const [isRender, setIsRender] = useState<boolean>(false);
+
+  // const toggleFav = () => {
+  //   dispatch(
+  //     toggleFavProduct({
+  //       idToggle,
+  //     })
+  //   );
+  // };
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch(
+  //       "https://soleauthenticity.azurewebsites.net/api/stores?page=1&pageSize=10"
+  //     );
+  //     const dataRes = await res.json();
+  //     setData(dataRes.data);
+  //     console.log(dataRes.data);
+  //     setIsRender(true);
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <div
       className="product-item"
@@ -19,7 +53,7 @@ const StoreItem = ({ id, name, address, avatar }: StoreTypeList) => {
       >
         <Link href={`/store/${id}`}>
           <a>
-            <Image
+            <img
               style={{
                 borderRadius: '20px',
                 textAlign: 'left',
@@ -44,7 +78,7 @@ const StoreItem = ({ id, name, address, avatar }: StoreTypeList) => {
         >
           <h3 style={{ fontWeight: 'bold' }}>{name}</h3>
           <div style={{ display: 'inline-block' }}>
-            <Image
+            <img
               src="/images/location.png"
               alt=""
               style={{ width: '30px', height: '30px' }}

@@ -1,11 +1,12 @@
-import Link from 'next/link'
 import { some } from 'lodash'
+import Link from 'next/link'
 import { useSelector } from 'react-redux'
+// import { toggleFavProduct } from 'store/reducers/user';
 import { RootState } from 'store'
 import { ProductTypeList } from 'types'
-import Image from 'next/image';
 
 const ProductItem = ({ imgPath, id, name, price }: ProductTypeList) => {
+  // const dispatch = useDispatch();
   const { favProducts } = useSelector((state: RootState) => state.user)
 
   const isFavourite = some(favProducts, (productId) => productId === id)
@@ -31,20 +32,12 @@ const ProductItem = ({ imgPath, id, name, price }: ProductTypeList) => {
         </button>
 
         <Link href={`/product/${id}`}>
-          <div>
-            <Image
-              src={imgPath}
-              alt="product"    
-              layout="fill"
-              objectFit="cover"
-              className="rounded-3xl"
-              style={{borderRadius: '30px'}}
-            />
-
+          <a>
+            <img style={{ borderRadius: '30px' }} src={imgPath} alt="product" />
             {/* {discount && 
               <span className="product__discount">{discount}%</span>
             } */}
-          </div>
+          </a>
         </Link>
       </div>
 

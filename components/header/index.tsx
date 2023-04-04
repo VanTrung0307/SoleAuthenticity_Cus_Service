@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from 'store'
 import useOnClickOutside from 'use-onclickoutside'
 import Logo from '../../assets/icons/logo'
 import { UseAuth } from './../../pages/api/context/AuthContext'
-import Image from 'next/image'
 
 type HeaderType = {
   isErrorPage?: Boolean
@@ -15,7 +14,7 @@ type HeaderType = {
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter()
   const { cartItems } = useSelector((state: RootState) => state.cart)
-  const arrayPaths = useMemo(() => ['/'], [])
+  const arrayPaths = ['/']
 
   const [onTop, setOnTop] = useState(
     !arrayPaths.includes(router.pathname) || isErrorPage ? false : true,
@@ -25,28 +24,24 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const navRef = useRef(null)
   const searchRef = useRef(null)
 
+  const headerClass = () => {
+    if (window.pageYOffset === 0) {
+      setOnTop(true)
+    } else {
+      setOnTop(false)
+    }
+  }
+
   useEffect(() => {
     if (!arrayPaths.includes(router.pathname) || isErrorPage) {
       return
     }
-    function headerClass() {
-      if (window.pageYOffset === 0) {
-        setOnTop(true)
-      } else {
-        setOnTop(false)
-      }
-    }
 
     headerClass()
-    function handleScroll() {
+    window.onscroll = function () {
       headerClass()
     }
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [arrayPaths, isErrorPage, router.pathname])
+  }, [])
 
   const closeMenu = () => {
     setMenuOpen(false)
@@ -234,27 +229,16 @@ const Header = ({ isErrorPage }: HeaderType) => {
                     onClick={handleLogout}
                     style={{ borderRadius: '0 0 10px 10px', cursor: 'pointer' }}
                   >
-                    <Image
-                      src="/images/logos/logout.png"
-                      alt=""
-                      width={15}
-                      height={15}
-                    />
-                    {' '}
+                    <img src="/images/logos/logout.png" />
                     Log Out
                   </a>
                 </Fragment>
               ) : (
                 <>
                   <Link href="/login">
-                    <div>
-                      {' '}
-                      <a style={{ borderRadius: '10px' }}>
-                        <Image
-                          src="/images/logos/enter.png"
-                          alt=""
-                          layout="fill"
-                        />
+                    <div style={{ borderRadius: '10px', cursor: 'pointer' }}>
+                      <a>
+                        <img src="/images/logos/enter.png" />
                         Log In
                       </a>
                     </div>

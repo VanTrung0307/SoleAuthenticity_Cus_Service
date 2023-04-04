@@ -218,15 +218,18 @@ function FormSubmit() {
             minWidth: '300px',
           }}
         >
-          <Image
+          <img
+            style={{
+              width: '300px',
+              height: '300px',
+              // marginTop: "35px",
+              // marginLeft: '20px',
+              backgroundColor: 'white',
+              borderRadius: '30px',
+              border: '1px solid black',
+            }}
             src="/images/logos/upload-image.png"
-            alt="Upload Image"
-            width={300}
-            height={300}
-            layout="fixed"
-            objectFit="cover"
-            className="rounded-lg border border-black"
-          />
+          ></img>
           {/* <strong style={{ color: "black" }} className="text-sm font-medium">
               Select images
             </strong> */}
