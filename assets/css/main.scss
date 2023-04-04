@@ -942,10 +942,21 @@ h5 {
         display: inline-block;
         line-height: 1;
         width: 100%;
+        font-size: 15px;
+        text-align: left;
+        padding-left: 10px;
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex-wrap: wrap;
       }
     }
     .product__image {
       position: relative;
+      width: 100%;
+      height: 200px;
+      margin: 0px 0px 100px 0px;
       &:before {
         top: 0;
         left: 0;
@@ -1719,7 +1730,9 @@ h5 {
 .products-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-right: -15px;
+  align-items: center;
   @include breakpoint(phone) {
     margin-right: -33px;
   }
@@ -3181,18 +3194,23 @@ h5 {
 }
 
 .brand_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 150px;
   height: 100px;
   text-align: center;
   align-items: center;
+  cursor: pointer;
   margin-left: 30px;
   margin-top: 15px;
+  margin: 0px 20px 60px 0px;
 }
 
 .brand__name {
   text-align: center;
-  //margin-left: -20px;
-  //margin-top: 10px;
+  margin-left: -50px;
+  margin-top: 10px;
   font-weight: bold;
   color: black;
   height: 0px;
@@ -3477,4 +3495,104 @@ h5 {
   outline: none;
   border-color: #00af54;
   box-shadow: 0 0 0 2px rgba(0, 175, 84, 0.2);
+}
+
+.container-letter {
+  width: 85%;
+  margin-left: 130px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #ffb100;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.title {
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.title p:last-child {
+  font-size: 30px;
+}
+
+.input-text {
+  width: 300px;
+  height: 50px;
+  background-color: #f0eccf;
+  border-radius: 10px 0 0 10px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.input-text input {
+  flex: 1;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.input-text p {
+  background-color: #000000;
+  width: 100px;
+  height: 50px;
+  border-radius: 0 10px 10px 0;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container-letter {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-letter {
+    width: 100%;
+  }
+
+  .input-text p {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.address h3 {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .address {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .address h3 {
+    margin: 10px 0 0;
+  }
 }

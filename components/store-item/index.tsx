@@ -77,7 +77,7 @@ const StoreItem = ({ id, name, address, avatar }: StoreTypeList) => {
           }}
         >
           <h3 style={{ fontWeight: 'bold' }}>{name}</h3>
-          <div style={{ display: 'inline-block' }}>
+          <div className="address" style={{ display: 'inline-block' }}>
             <img
               src="/images/location.png"
               alt=""
