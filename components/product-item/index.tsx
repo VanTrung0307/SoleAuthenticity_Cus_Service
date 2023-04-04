@@ -1,19 +1,18 @@
-import Link from 'next/link';
-import { some } from 'lodash';
-import { useSelector } from 'react-redux';
-// import { toggleFavProduct } from 'store/reducers/user';
-import { RootState } from 'store';
-import { ProductTypeList } from 'types';
+import Link from 'next/link'
+import { some } from 'lodash'
+import { useSelector } from 'react-redux'
+import { RootState } from 'store'
+import { ProductTypeList } from 'types'
+import Image from 'next/image';
 
-const ProductItem = ({imgPath, id, name, price }: ProductTypeList) => {
-  // const dispatch = useDispatch();
-  const { favProducts } = useSelector((state: RootState) => state.user);
+const ProductItem = ({ imgPath, id, name, price }: ProductTypeList) => {
+  const { favProducts } = useSelector((state: RootState) => state.user)
 
-  const isFavourite = some(favProducts, productId => productId === id);
+  const isFavourite = some(favProducts, (productId) => productId === id)
 
   // const toggleFav = () => {
   //   dispatch(toggleFavProduct(
-  //     { 
+  //     {
   //       id,
   //     }
   //   ))
@@ -21,30 +20,44 @@ const ProductItem = ({imgPath, id, name, price }: ProductTypeList) => {
 
   return (
     <div className="product-item">
-      <div className="product__image" style={{borderRadius: '30px'}}>
-        <button type="button" /*onClick={toggleFav}*/ className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
+      <div className="product__image" style={{ borderRadius: '30px' }}>
+        <button
+          type="button"
+          /*onClick={toggleFav}*/ className={`btn-heart ${
+            isFavourite ? 'btn-heart--active' : ''
+          }`}
+        >
+          <i className="icon-heart"></i>
+        </button>
 
         <Link href={`/product/${id}`}>
-          <a>
-            <img style={{ borderRadius:'30px'}} src={imgPath} alt="product" />
+          <div>
+            <Image
+              src={imgPath}
+              alt="product"    
+              layout="fill"
+              objectFit="cover"
+              className="rounded-3xl"
+              style={{borderRadius: '30px'}}
+            />
+
             {/* {discount && 
               <span className="product__discount">{discount}%</span>
             } */}
-          </a>
+          </div>
         </Link>
       </div>
-      
+
       <div className="product__description">
         <h3>{name}</h3>
-        <div className='product__price product__price--discount' >
-          <h4>{ price } đ</h4>
+        <div className="product__price product__price--discount">
+          <h4>{price} đ</h4>
 
-            <span style={{textDecoration: 'line-through'}}>{ price } đ</span>
+          <span style={{ textDecoration: 'line-through' }}>{price} đ</span>
         </div>
       </div>
     </div>
   )
-};
-
+}
 
 export default ProductItem

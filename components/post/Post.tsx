@@ -1,19 +1,18 @@
-// import Link from "next/link";
-// import dayjs from "dayjs";
-import Link from "next/link";
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface PostProps {
-  productId: number;
-  tag: string;
-  elements?: string;
-  title: string;
-  description: string;
-  avatar: string;
-  authorName?: string;
+  productId: number
+  tag: string
+  elements?: string
+  title: string
+  description: string
+  avatar: string
+  authorName?: string
 }
 
 export default function Post(props: PostProps) {
-  let rid = props.productId.toString();
+  let rid = props.productId.toString()
   // let slug = props.title?.toLowerCase().replaceAll(" ","-")
   // console.log(slug);
 
@@ -22,81 +21,81 @@ export default function Post(props: PostProps) {
       <div
         className="product__image"
         style={{
-          borderRadius: "30px",
-          width: "400px",
-          height: "200px",
-          margin: "0px 80px 100px 0px",
+          borderRadius: '30px',
+          width: '400px',
+          height: '200px',
+          margin: '0px 80px 100px 0px',
         }}
       >
         <Link href={`/review/${rid}`}>
-          <a>
-            <img
-              style={{
-                borderRadius: "30px 30px 0px 0px",
-                width: "100%",
-                height: "200px",
-              }}
+          <div>
+            <Image
               src={props.avatar}
               alt="product"
+              width={300}
+              height={200}
+              layout="responsive"
+              objectFit="cover"
+              className="rounded-t-3xl"
             />
 
             {props.tag && (
               <span
                 style={{
                   backgroundColor:
-                    props.tag === "Guides"
-                      ? "orange"
-                      : props.tag === "Reviews"
-                      ? "black"
-                      : "",
+                    props.tag === 'Guides'
+                      ? 'orange'
+                      : props.tag === 'Reviews'
+                      ? 'black'
+                      : '',
                 }}
                 className="product__discount"
               >
                 {props.tag}
               </span>
             )}
-          </a>
+          </div>
         </Link>
 
         <Link href={`/review/${rid}`}>
           <div
             style={{
-              backgroundColor: "black",
-              borderRadius: "0px 0px 30px 30px",
-              width: "100%",
-              height: "130px",
-              cursor: "pointer",
-              display: "flex",
-              flexDirection: "column",
+              backgroundColor: 'black',
+              borderRadius: '0px 0px 30px 30px',
+              width: '100%',
+              height: '130px',
+              cursor: 'pointer',
+              display: 'flex',
+              flexDirection: 'column',
             }}
             className="product__description"
           >
             <h1
               style={{
-                fontWeight: "bold",
-                fontSize: "20px",
-                paddingBottom: "20px",
-                color: "white",
-                fontFamily: "arial",
-                textAlign: "left",
-                paddingLeft: "10px",
-                paddingTop: "10px",
-                flexWrap: "wrap",
+                fontWeight: 'bold',
+                fontSize: '20px',
+                paddingBottom: '20px',
+                color: 'white',
+                fontFamily: 'arial',
+                textAlign: 'left',
+                paddingLeft: '10px',
+                paddingTop: '10px',
+                flexWrap: 'wrap',
               }}
             >
               {props.title}
             </h1>
             <h3
               style={{
-                fontSize: "15px",
-                fontFamily: "arial",
-                color: "white",
-                textAlign: "left",
-                paddingLeft: "10px",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-                flexWrap: "wrap",
+                fontSize: '15px',
+                fontFamily: 'arial',
+                color: 'white',
+                textAlign: 'left',
+                paddingLeft: '10px',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                flexWrap: 'wrap',
               }}
             >
               {props.description}
@@ -105,5 +104,5 @@ export default function Post(props: PostProps) {
         </Link>
       </div>
     </div>
-  );
+  )
 }

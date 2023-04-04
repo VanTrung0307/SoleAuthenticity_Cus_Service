@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { RootState } from 'store'
 import CheckoutStatus from '../../components/checkout-status'
 import Item from './item'
-import { RootState } from 'store'
-import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const ShoppingCart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart)
@@ -87,7 +88,7 @@ const ShoppingCart = () => {
                           : ''
                       }
                       name={item.name}
-                      color={item.color}
+                      //color={item.color}
                       salePrice={item.salePrice}
                       noDiscount={item.noDiscount}
                       size={item.size}
@@ -103,9 +104,12 @@ const ShoppingCart = () => {
         </div>
 
         <div className="cart-actions">
-          <a href="/products" className="cart__btn-back">
-            <i className="icon-left"></i> Continue Shopping
-          </a>
+          <Link href="/products">
+            <a className="cart__btn-back">
+              <i className="icon-left"></i> Continue Shopping
+            </a>
+          </Link>
+
           <input
             type="text"
             placeholder="Promo Code"
@@ -117,15 +121,19 @@ const ShoppingCart = () => {
               Total cost <strong>{priceTotal().toFixed(2)} đ</strong>
             </p>
             {cartItems.length > 0 ? (
-              <a href="/cart/checkout" className="btn btn--rounded btn--yellow">
-                Checkout
-              </a>
+              <>
+                <Link href="/cart/checkout">
+                  <a className="btn btn--rounded btn--yellow">Checkout</a>
+                </Link>
+              </>
             ) : (
               <button
                 className="btn btn--rounded btn--yellow"
                 disabled
                 onClick={handleCheckout}
-                style={{ backgroundColor: cartItems.length === 0 ? '#e6e6e6' : '' }}
+                style={{
+                  backgroundColor: cartItems.length === 0 ? '#e6e6e6' : '',
+                }}
               >
                 Checkout
               </button>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Download = () => {
   return (
@@ -19,28 +20,44 @@ const Download = () => {
         </div>
         <div className="download-img">
           <Link href="#">
-            <img
-              className="applogo"
-              src="/images/logos/appstore.gif"
-              alt="AppStore"
-            />
+            <div>
+              <Image
+                className="applogo"
+                src="/images/logos/appstore.gif"
+                alt="AppStore"
+                width={200}
+                height={80}
+              />
+            </div>
           </Link>
           <Link href="#">
-            <img
-              className="applogo"
-              src="/images/logos/googleplay.gif"
-              alt="GooglePLay"
-            />
+            <div>
+              <Image
+                className="applogo"
+                src="/images/logos/googleplay.gif"
+                alt="GooglePLay"
+                width={200}
+                height={80}
+              />
+            </div>
           </Link>
         </div>
         <div className="logo-left">
-          <img className="phone" src="/images/logos/phone.gif" alt="authen" />
+          <Image
+            className="phone"
+            src="/images/logos/phone.gif"
+            alt="authen"
+            width={200}
+            height={300}
+          />
         </div>
         <div className="logo-right">
-          <img
+          <Image
             className="authen"
             src="/images/logos/applogo.png"
             alt="authen"
+            width={200}
+            height={200}
           />
         </div>
       </div>

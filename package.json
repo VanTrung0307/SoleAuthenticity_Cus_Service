@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "lint": "next lint"
   },
   "keywords": [
     "react",
@@ -50,6 +51,8 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "autoprefixer": "^10.4.13",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
     "fslightbox-react": "^1.7.0",
     "node-fetch": "^3.1.1",
     "postcss": "^8.4.21",

@@ -60,7 +60,7 @@ export type ProductStoreType = {
   salePrice: any;
   noDiscount: any;
   count: number;
-  color: string;
+  //color: string;
   size: string;
 }
 

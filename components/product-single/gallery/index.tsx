@@ -1,8 +1,9 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Scrollbar, Navigation } from "swiper";
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Scrollbar, Navigation } from 'swiper'
+import Image from 'next/image'
 
-SwiperCore.use([Scrollbar, Navigation]);
+SwiperCore.use([Scrollbar, Navigation])
 
 // type GalleryProductType = {
 //   images: object[];
@@ -17,17 +18,18 @@ const Gallery = ({ images }: any) => {
             <div className="product-gallery__thumbs">
               {images.map((image: any) => (
                 <div key={image?.id} className="product-gallery__thumb">
-                  <img
+                  <Image
                     onError={({ currentTarget }) => {
-                      currentTarget.onerror = null; // prevents looping
+                      currentTarget.onerror = null // prevents looping
                       currentTarget.src =
-                        "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png";
+                        'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
                     }}
                     src={
                       image.imgPath ??
-                      "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+                      'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
                     }
                     alt=""
+                    layout="fill"
                   />
                 </div>
               ))}
@@ -37,27 +39,31 @@ const Gallery = ({ images }: any) => {
               effect="slide"
               className="swiper-wrapper"
               style={{
-                width: "500px",
-                height: "500px",
-                maxHeight: "500px",
-                maxWidth: "500px",
+                width: '500px',
+                height: '500px',
+                maxHeight: '500px',
+                maxWidth: '500px',
               }}
             >
               {images.map((image: any) => (
-                <SwiperSlide style={{ maxHeight: "500px", maxWidth: "500px" }}>
+                <SwiperSlide
+                  key={image.id}
+                  style={{ maxHeight: '500px', maxWidth: '500px' }}
+                >
                   <div key={image.id}>
-                    <img
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null; // prevents looping
-                        currentTarget.src =
-                          "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png";
-                      }}
+                    <Image
                       src={
                         image.imgPath ??
-                        "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+                        'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
                       }
                       alt=""
-                      style={{ width: "500px", height: "500px" }}
+                      width={500}
+                      height={500}
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null
+                        currentTarget.src =
+                          'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
+                      }}
                     />
                   </div>
                 </SwiperSlide>
@@ -66,21 +72,22 @@ const Gallery = ({ images }: any) => {
           </section>
         </>
       ) : (
-        <img
+        <Image
           onError={({ currentTarget }) => {
-            currentTarget.onerror = null; // prevents looping
+            currentTarget.onerror = null // prevents looping
             currentTarget.src =
-              "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png";
+              'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
           }}
           src={
-            "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+            'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png'
           }
           alt=""
-          style={{ width: "500px", height: "500px" }}
+          width={500}
+          height={500}
         />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Gallery;
+export default Gallery

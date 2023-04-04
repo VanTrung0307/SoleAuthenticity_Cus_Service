@@ -1,13 +1,15 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // fake data
-import reviewca from '../../utils/data/reviewca';
+import reviewca from "../../utils/data/reviewca";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
   console.log(req);
 
   // fake loading time
   setTimeout(() => {
     res.status(200).json(reviewca);
   }, 800);
-}
+};
+
+export default handler;

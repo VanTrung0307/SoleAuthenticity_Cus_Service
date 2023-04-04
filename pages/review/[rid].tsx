@@ -53,7 +53,7 @@ export default function ReadingPage() {
     }
     
 
-  }, [router.asPath, router.route]);
+  }, [rid, router.asPath, router.route]);
   console.log(isRender);
   
   return (

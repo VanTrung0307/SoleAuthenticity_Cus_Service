@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 
 const CheckoutItems = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -25,14 +26,23 @@ const CheckoutItems = () => {
   return (
     <ul className="checkout-items">
       {cartItems.map((item) => {
-          const testId = images?.filter((i) => i.id === item.id);
+        const testId = images?.filter((i) => i.id === item.id);
         return (
-          <li className="checkout-item">
+          <li key={item.id} className="checkout-item">
             <div className="checkout-item__content">
               <div className="checkout-item__img">
-                <img src={testId && testId.length > 0 ? (testId.slice(0, 1).shift()?.imgPath?? "") : ""} />
+                <img
+                  src={
+                    testId && testId.length > 0
+                      ? testId.slice(0, 1).shift()?.imgPath ?? ""
+                      : ""
+                  }
+                  width={500}
+                  height={500}
+                  alt="product"
+                />
               </div>
-              
+
               <div className="checkout-item__data">
                 <h3>{item.name}</h3>
                 <span>#{item.id}</span>

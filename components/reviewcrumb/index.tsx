@@ -1,4 +1,5 @@
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
 const Reviewcrumb = () => {
   return (
@@ -6,15 +7,19 @@ const Reviewcrumb = () => {
       <div className="container">
         <ul className="breadcrumb-list">
           <li>
-            <a href="/">
-              <i className="icon-home"></i>
-            </a>
+            <Link href="/">
+              <div>
+                <a>
+                  <i className="icon-home"></i>
+                </a>
+              </div>
+            </Link>
           </li>
           <li>All Reviews</li>
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Reviewcrumb;
+export default Reviewcrumb

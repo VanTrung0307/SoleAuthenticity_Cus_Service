@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { removeProduct } from 'store/reducers/cart'
 import Layout from '../../layouts/Main'
+import Link from 'next/link'
 
 const CheckoutPage = () => {
   const dispatch = useDispatch()
@@ -184,6 +185,11 @@ const CheckoutPage = () => {
   //   return;
   // };
 
+  const handleClick = (e: any) => {
+    e.preventDefault()
+    router.push('/cart/checkout')
+  }
+
   return (
     <Layout>
       <section className="cart">
@@ -199,18 +205,23 @@ const CheckoutPage = () => {
                 <div className="checkout__btns">
                   {accountUser ? (
                     <a
-                      href="/cart/checkout"
+                      href="#"
+                      onClick={handleClick}
                       style={{
                         borderRadius: '10px 10px 0 0',
                         cursor: 'pointer',
                       }}
                     >{`${accountUser.name}`}</a>
                   ) : (
-                    <a href="/login" style={{ borderRadius: '10px' }}>
-                      <button className="btn btn--rounded btn--yellow">
-                        Log in
-                      </button>
-                    </a>
+                    <Link href="/login">
+                      <div>
+                        <a style={{ borderRadius: '10px' }}>
+                          <button className="btn btn--rounded btn--yellow">
+                            Log in
+                          </button>
+                        </a>
+                      </div>
+                    </Link>
                   )}
                 </div>
 
@@ -287,9 +298,11 @@ const CheckoutPage = () => {
             </div>
 
             <div className="cart-actions cart-actions--checkout">
-              <a href="/cart" className="cart__btn-back">
-                <i className="icon-left"></i> Back
-              </a>
+              <Link href="/cart">
+                <a className="cart__btn-back">
+                  <i className="icon-left"></i> Back
+                </a>
+              </Link>
 
               <div className="cart-actions__items-wrapper">
                 <button type="button" className="btn btn--rounded btn--border">
@@ -304,7 +317,9 @@ const CheckoutPage = () => {
                     Proceed to payment
                   </button>
                 ) : (
-                  <a href="/login"></a>
+                  <Link href="/login">
+                    <a>Log In</a>
+                  </Link>
                 )}
                 {/* <button
                   onClick={handleCheckout}

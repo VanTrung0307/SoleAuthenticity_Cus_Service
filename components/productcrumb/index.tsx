@@ -1,11 +1,11 @@
 // import { GetServerSideProps } from "next";
-import React from "react";
-import { ProductTypeList } from "types";
+import Link from 'next/link'
+import React from 'react'
+import { ProductTypeList } from 'types'
 
 type ProductCrumbType = {
-  product: ProductTypeList;
-};
-
+  product: ProductTypeList
+}
 
 const Productcrumb = ({ product }: ProductCrumbType) => {
   return (
@@ -13,12 +13,20 @@ const Productcrumb = ({ product }: ProductCrumbType) => {
       <div className="container">
         <ul className="breadcrumb-list">
           <li>
-            <a href="/">
-              <i className="icon-home"></i>
-            </a>
+            <Link href="/">
+              <div>
+                <a>
+                  <i className="icon-home"></i>
+                </a>
+              </div>
+            </Link>
           </li>
           <li>
-            <a href="/products">All Products</a>
+            <Link href="/products">
+              <div>
+                <a>All Products</a>
+              </div>
+            </Link>
           </li>
           <li>
             <a>{product.name}</a>
@@ -26,7 +34,7 @@ const Productcrumb = ({ product }: ProductCrumbType) => {
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Productcrumb;
+export default Productcrumb

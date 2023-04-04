@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProductItemLoading = () => (
   <a href="#" className="product-item product-item--loading">
     <div className="product__image">

@@ -6,6 +6,7 @@ import Subscribe from '../components/subscribe'
 import ReviewsFeatured from './../components/reviews-featured/index'
 import CheckFeatured from './../components/check-featured/index'
 import Download from './../components/download-banner/index'
+import Image from 'next/image'
 
 const IndexPage = () => {
   return (
@@ -20,7 +21,10 @@ const IndexPage = () => {
           >
             <div className="featured-item__content">
               <h3>Our Fanpage</h3>
-              <a href="https://www.facebook.com/soleAuthenticity" className="btn btn--rounded">
+              <a
+                href="https://www.facebook.com/soleAuthenticity"
+                className="btn btn--rounded"
+              >
                 JOIN US
               </a>
             </div>
@@ -39,12 +43,18 @@ const IndexPage = () => {
           </article>
 
           <article
-            style={{ backgroundImage: 'url(https://w0.peakpx.com/wallpaper/911/543/HD-wallpaper-tiktok-bay-flash-football-green-hulk-lantern-logo-packer-packers-triangle-thumbnail.jpg)' }}
+            style={{
+              backgroundImage:
+                'url(https://w0.peakpx.com/wallpaper/911/543/HD-wallpaper-tiktok-bay-flash-football-green-hulk-lantern-logo-packer-packers-triangle-thumbnail.jpg)',
+            }}
             className="featured-item featured-item-small"
           >
             <div className="featured-item__content">
               <h3>Our TikTok</h3>
-              <a href="https://www.tiktok.com/@soleauthenticity" className="btn btn--rounded">
+              <a
+                href="https://www.tiktok.com/@soleauthenticity"
+                className="btn btn--rounded"
+              >
                 GO TO TIKTOK
               </a>
             </div>
@@ -90,7 +100,7 @@ const IndexPage = () => {
               <div className="data-item__content">
                 <h4>Money-Back Guarantee</h4>
                 <p>
-                  If an item arrived damaged or you've changed your mind, you
+                  If an item arrived damaged or you have changed your mind, you
                   can send it back for a full refund.
                 </p>
               </div>
@@ -141,31 +151,41 @@ const IndexPage = () => {
           </h6>
         </div>
         <div className="logo-content">
-          <img className="brand-img" src="\brand-img\nike.png" alt="nike" />
-          <img
+          <Image
             className="brand-img"
-            src="\brand-img\Adidas.png"
-            alt="black logo nike background @transparentpng.com"
+            src="/brand-img/nike.png"
+            alt="nike"
+            width={100}
+            height={70}
+            style={{ padding: '100px' }}
           />
-          <img
+          <Image
             className="brand-img"
-            src="\brand-img\newBlance.png"
-            alt="black logo nike background @transparentpng.com"
+            src="/brand-img/newBlance.png"
+            alt="newBalance"
+            width={100}
+            height={70}
           />
-          <img
+          <Image
             className="brand-img"
-            src="\brand-img\vans.png"
-            alt="black logo nike background @transparentpng.com"
+            src="/brand-img/vans.png"
+            alt="vans"
+            width={100}
+            height={70}
           />
-          <img
+          <Image
             className="brand-img"
-            src="\brand-img\puma.png"
-            alt="black logo nike background @transparentpng.com"
+            src="/brand-img/puma.png"
+            alt="puma"
+            width={100}
+            height={70}
           />
-          <img
+          <Image
             className="brand-img"
-            src="\brand-img\jordan.png"
-            alt="black logo nike background @transparentpng.com"
+            src="/brand-img/jordan.png"
+            alt="jordan"
+            width={100}
+            height={70}
           />
         </div>
       </section>

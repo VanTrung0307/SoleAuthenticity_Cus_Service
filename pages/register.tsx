@@ -1,5 +1,6 @@
-import Layout from "../layouts/Main";
-import Link from "next/link";
+import Layout from '../layouts/Main'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const RegisterPage = () => (
   <Layout>
@@ -7,9 +8,11 @@ const RegisterPage = () => (
       <div className="container">
         <div className="back-button-section">
           <Link href="/products">
-            <a>
-              <i className="icon-left"></i> Back to store
-            </a>
+            <div>
+              <a>
+                <i className="icon-left"></i> Back to store
+              </a>
+            </div>
           </Link>
         </div>
 
@@ -80,31 +83,29 @@ const RegisterPage = () => (
             </p>
           </form>
 
-          <img
-            style={{
-              width: "400px",
-              height: "400px",
-              marginLeft: "-500px",
-              marginTop: "-600px",
-            }}
+          <Image
             src="/images/sneakerbox.gif"
             alt="Jordan"
+            width={400}
+            height={400}
+            layout="fixed"
+            objectFit="cover"
+            objectPosition="-500px -600px"
           />
 
-          <img
-            style={{
-              width: "400px",
-              height: "400px",
-              marginLeft: "550px",
-              marginTop: "-600px",
-            }}
+          <Image
             src="/images/sneaker.gif"
             alt="Jordan"
+            width={400}
+            height={400}
+            layout="fixed"
+            objectFit="cover"
+            objectPosition="550px -600px"
           />
         </div>
       </div>
     </section>
   </Layout>
-);
+)
 
-export default RegisterPage;
+export default RegisterPage

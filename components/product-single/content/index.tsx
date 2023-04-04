@@ -1,13 +1,11 @@
-import { useState } from "react";
-import productsColors from "./../../../utils/data/products-colors";
-import productsSizes from "./../../../utils/data/products-sizes";
-import CheckboxColor from "./../../products-filter/form-builder/checkbox-color";
-import { useDispatch, useSelector } from "react-redux";
 import { some } from "lodash";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
 import { addProduct } from "store/reducers/cart";
 import { toggleFavProduct } from "store/reducers/user";
 import { ProductStoreType } from "types";
-import { RootState } from "store";
+import productsSizes from "./../../../utils/data/products-sizes";
 
 // type ProductContent = {
 //   product: ProductType;
@@ -16,7 +14,7 @@ import { RootState } from "store";
 const Content = ({ product }: any) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState<number>(1);
-  const [color, setColor] = useState<string>("");
+  //const [color, setColor] = useState<string>("");
   const [itemSize, setItemSize] = useState<string>("");
 
   const onClick = () => {
@@ -26,7 +24,7 @@ const Content = ({ product }: any) => {
     setCount(c => Math.max(c - 1, 0));
   };
 
-  const onColorSet = (e: string) => setColor(e);
+  //const onColorSet = (e: string) => setColor(e);
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
     setItemSize(e.target.value);
 
@@ -52,7 +50,7 @@ const Content = ({ product }: any) => {
       salePrice: product.currentPrice,
       noDiscount: product.price,
       count: count,
-      color: color,
+      //color: color,
       size: itemSize,
     };
 
@@ -112,7 +110,7 @@ const Content = ({ product }: any) => {
               <select onChange={onSelectChange}>
                 <option>Choose size</option>
                 {productsSizes.map((type) => (
-                  <option value={type.label}>{type.label}</option>
+                  <option key={type.label} value={type.label}>{type.label}</option>
                 ))}
               </select>
             </div>

@@ -1,4 +1,5 @@
 import Logo from '../../assets/icons/logo'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -25,21 +26,21 @@ const Footer = () => {
             <ul className="site-footer__social-networks">
               <li>
                 <a href="https://www.facebook.com/soleAuthenticity">
-                <img
-                    src="/images/icons/fb.png"
-                    alt="TikTok"
-                    className="icon-tiktok"
-                    style={{width: '40px', height: '30px'}}
+                  <Image
+                    src="/images/icons/fb.pn"
+                    alt="Facebook"
+                    width={500}
+                    height={500}
                   />
                 </a>
               </li>
               <li>
                 <a href="https://www.tiktok.com/@soleauthenticity">
-                  <img
+                  <Image
                     src="/images/icons/tiktok.png"
-                    alt="TikTok"
-                    className="icon-tiktok"
-                    style={{width: '27px', height: '27px'}}
+                    alt="TikTOk"
+                    width={500}
+                    height={500}
                   />
                 </a>
               </li>

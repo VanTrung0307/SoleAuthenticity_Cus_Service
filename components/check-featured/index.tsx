@@ -1,23 +1,28 @@
-import useSwr from 'swr';
-import React from 'react';
-import CheckCarousel from './carousel';
+import useSwr from 'swr'
+import React from 'react'
+import CheckCarousel from './carousel'
+import Link from 'next/link'
 
 const CheckFeatured = () => {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data } = useSwr('/api/checks', fetcher);
+  const fetcher = (url: string) => fetch(url).then((res) => res.json())
+  const { data } = useSwr('/api/checks', fetcher)
 
   return (
     <section className="section section-products-featured">
       <div className="container">
         <header className="section-products-featured__header">
           <h3>Checked</h3>
-          <a href="/products" className="btn btn--rounded btn--border">Show All</a>
+          <Link href="/products">
+            <div>
+              <a className="btn btn--rounded btn--border">Show All</a>
+            </div>
+          </Link>
         </header>
 
         <CheckCarousel checked={data} />
       </div>
     </section>
   )
-};
+}
 
 export default CheckFeatured

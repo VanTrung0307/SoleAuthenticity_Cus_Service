@@ -1,93 +1,98 @@
-import Link from "next/link";
-import Router, { useRouter } from "next/router";
-import { Fragment, useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "store";
-import useOnClickOutside from "use-onclickoutside";
-import Logo from "../../assets/icons/logo";
-import { UseAuth } from "./../../pages/api/context/AuthContext";
+import Link from 'next/link'
+import Router, { useRouter } from 'next/router'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from 'store'
+import useOnClickOutside from 'use-onclickoutside'
+import Logo from '../../assets/icons/logo'
+import { UseAuth } from './../../pages/api/context/AuthContext'
+import Image from 'next/image'
 
 type HeaderType = {
-  isErrorPage?: Boolean;
-};
+  isErrorPage?: Boolean
+}
 
 const Header = ({ isErrorPage }: HeaderType) => {
-  const router = useRouter();
-  const { cartItems } = useSelector((state: RootState) => state.cart);
-  const arrayPaths = ["/"];
+  const router = useRouter()
+  const { cartItems } = useSelector((state: RootState) => state.cart)
+  const arrayPaths = useMemo(() => ['/'], [])
 
   const [onTop, setOnTop] = useState(
-    !arrayPaths.includes(router.pathname) || isErrorPage ? false : true
-  );
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const navRef = useRef(null);
-  const searchRef = useRef(null);
-
-  const headerClass = () => {
-    if (window.pageYOffset === 0) {
-      setOnTop(true);
-    } else {
-      setOnTop(false);
-    }
-  };
+    !arrayPaths.includes(router.pathname) || isErrorPage ? false : true,
+  )
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const navRef = useRef(null)
+  const searchRef = useRef(null)
 
   useEffect(() => {
     if (!arrayPaths.includes(router.pathname) || isErrorPage) {
-      return;
+      return
+    }
+    function headerClass() {
+      if (window.pageYOffset === 0) {
+        setOnTop(true)
+      } else {
+        setOnTop(false)
+      }
     }
 
-    headerClass();
-    window.onscroll = function () {
-      headerClass();
-    };
-  }, []);
+    headerClass()
+    function handleScroll() {
+      headerClass()
+    }
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [arrayPaths, isErrorPage, router.pathname])
 
   const closeMenu = () => {
-    setMenuOpen(false);
-  };
+    setMenuOpen(false)
+  }
 
   const closeSearch = () => {
-    setSearchOpen(false);
-  };
+    setSearchOpen(false)
+  }
 
   // on click outside
-  useOnClickOutside(navRef, closeMenu);
-  useOnClickOutside(searchRef, closeSearch);
+  useOnClickOutside(navRef, closeMenu)
+  useOnClickOutside(searchRef, closeSearch)
 
-  const { logOut } = UseAuth();
+  const { logOut } = UseAuth()
 
   const handleLogout = () => {
-    logOut();
-    localStorage.removeItem("user");
-    Router.push("/login");
-  };
+    logOut()
+    localStorage.removeItem('user')
+    Router.push('/login')
+  }
 
   type UserInfo = {
-    id: string;
-    name: string;
-    role: string;
-  };
+    id: string
+    name: string
+    role: string
+  }
 
-  const [accountUser, setAccountUser] = useState<UserInfo>();
+  const [accountUser, setAccountUser] = useState<UserInfo>()
 
   useEffect(() => {
-    const storeObject = localStorage.getItem("user");
-    if (storeObject === "Admin") {
+    const storeObject = localStorage.getItem('user')
+    if (storeObject === 'Admin') {
       // setAccountUser(JSON.parse(storeObject));
-      return;
+      return
     }
-    
+
     if (storeObject) {
-      setAccountUser(JSON.parse(storeObject));
+      setAccountUser(JSON.parse(storeObject))
     }
-  }, []);
+  }, [])
   //console.log('accountUser',accountUser);
 
   return (
-    <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
+    <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className="container">
-        <Link href="/" style={{ marginRight: "-100px" }}>
+        <Link href="/" style={{ marginRight: '-100px' }}>
           <a>
             <h1 className="site-logo">
               <Logo />
@@ -96,9 +101,9 @@ const Header = ({ isErrorPage }: HeaderType) => {
                 <br />
                 <div
                   style={{
-                    fontSize: "10px",
-                    textAlign: "center",
-                    paddingTop: "10px",
+                    fontSize: '10px',
+                    textAlign: 'center',
+                    paddingTop: '10px',
                   }}
                 >
                   Identity - Responsibility - Prestige
@@ -109,7 +114,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
         </Link>
         <nav
           ref={navRef}
-          className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
+          className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}
         >
           <Link href="/reviews">
             <a className="nav-link nav-link-grow-up" href="#">
@@ -190,7 +195,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <button
             ref={searchRef}
             className={`search-form-wrapper ${
-              searchOpen ? "search-form--active" : ""
+              searchOpen ? 'search-form--active' : ''
             }`}
           >
             <form className={`search-form`}>
@@ -222,23 +227,39 @@ const Header = ({ isErrorPage }: HeaderType) => {
               {accountUser ? (
                 <Fragment>
                   <a
-                    style={{ borderRadius: "10px 10px 0 0", cursor: "pointer" }}
+                    style={{ borderRadius: '10px 10px 0 0', cursor: 'pointer' }}
                   >{`${accountUser.name}`}</a>
                   <a
                     type="button"
                     onClick={handleLogout}
-                    style={{ borderRadius: "0 0 10px 10px", cursor: "pointer" }}
+                    style={{ borderRadius: '0 0 10px 10px', cursor: 'pointer' }}
                   >
-                    <img src="/images/logos/logout.png" />
+                    <Image
+                      src="/images/logos/logout.png"
+                      alt=""
+                      width={15}
+                      height={15}
+                    />
+                    {' '}
                     Log Out
                   </a>
                 </Fragment>
               ) : (
                 <>
-                  <a href="/login" style={{ borderRadius: "10px" }}>
-                    <img src="/images/logos/enter.png" />
-                    Log In
-                  </a>
+                  <Link href="/login">
+                    <div>
+                      {' '}
+                      <a style={{ borderRadius: '10px' }}>
+                        <Image
+                          src="/images/logos/enter.png"
+                          alt=""
+                          layout="fill"
+                        />
+                        Log In
+                      </a>
+                    </div>
+                  </Link>
+
                   {/* <a href="/register" style={{ borderRadius: "0 0 10px " }}>
                     <img src="/images/logos/register.png" />
                     Sign Up
@@ -259,7 +280,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

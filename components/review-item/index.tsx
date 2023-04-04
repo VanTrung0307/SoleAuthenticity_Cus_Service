@@ -1,4 +1,5 @@
 import { some } from "lodash";
+import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 // import { toggleFavProduct } from "store/reducers/user";
@@ -42,7 +43,7 @@ const ReviewItem = ({
 
         <Link href={`/review/${rid}`}>
           <a>
-            <img
+            <Image
               style={{
                 borderRadius: "30px 30px 0px 0px",
                 width: "100%",
@@ -50,6 +51,7 @@ const ReviewItem = ({
               }}
               src={avatar}
               alt="product"
+              layout="fill"
             />
 
             {types && (

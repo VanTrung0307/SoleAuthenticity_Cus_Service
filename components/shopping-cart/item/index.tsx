@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { removeProduct, setCount } from 'store/reducers/cart';
 import { ProductStoreType } from 'types';
 
-const ShoppingCart = ({ imgPath, name, id, color, size, count, salePrice, noDiscount }: ProductStoreType) => {
+const ShoppingCart = ({ imgPath, name, id, size, count, salePrice, noDiscount }: ProductStoreType) => {
   const dispatch = useDispatch();
 
   const removeFromCart = () => {
@@ -11,7 +12,7 @@ const ShoppingCart = ({ imgPath, name, id, color, size, count, salePrice, noDisc
         imgPath, 
         name, 
         id, 
-        color, 
+        //color, 
         size, 
         count, 
         salePrice,
@@ -30,7 +31,7 @@ const ShoppingCart = ({ imgPath, name, id, color, size, count, salePrice, noDisc
         imgPath, 
         name, 
         id, 
-        color, 
+        //color, 
         size, 
         count, 
         salePrice,
@@ -47,7 +48,7 @@ const ShoppingCart = ({ imgPath, name, id, color, size, count, salePrice, noDisc
       <td>
         <div className="cart-product">
           <div className="cart-product__img">
-            <img src={imgPath} alt="" />
+          {imgPath && <Image src={imgPath} alt="" width={100} height={100}/>}
           </div>
 
           <div className="cart-product__content">
@@ -56,7 +57,7 @@ const ShoppingCart = ({ imgPath, name, id, color, size, count, salePrice, noDisc
           </div>
         </div>
       </td>
-      <td className="cart-item-before" data-label="Color">{color}</td>
+      {/* <td className="cart-item-before" data-label="Color">{color}</td> */}
       <td className="cart-item-before" data-label="Size">{size}</td>
       <td>
         <div className="quantity-button">

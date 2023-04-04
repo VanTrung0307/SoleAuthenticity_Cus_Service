@@ -1,10 +1,10 @@
-import React from "react";
-import { ReviewTypeList } from "types";
+import Link from 'next/link'
+import React from 'react'
+import { ReviewTypeList } from 'types'
 
 type ReviewDetailCrumbType = {
-  review: ReviewTypeList;
-};
-
+  review: ReviewTypeList
+}
 
 const ReviewDetailcrumb = ({ review }: ReviewDetailCrumbType) => {
   return (
@@ -12,12 +12,20 @@ const ReviewDetailcrumb = ({ review }: ReviewDetailCrumbType) => {
       <div className="container">
         <ul className="breadcrumb-list">
           <li>
-            <a href="/">
-              <i className="icon-home"></i>
-            </a>
+            <Link href="/">
+              <div>
+                <a>
+                  <i className="icon-home"></i>
+                </a>
+              </div>
+            </Link>
           </li>
           <li>
-            <a href="/reviews">All Reviews</a>
+            <Link href="/reviews">
+              <div>
+                <a>All Reviews</a>
+              </div>
+            </Link>
           </li>
           <li>
             <a>{review.title}</a>
@@ -25,7 +33,7 @@ const ReviewDetailcrumb = ({ review }: ReviewDetailCrumbType) => {
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ReviewDetailcrumb;
+export default ReviewDetailcrumb

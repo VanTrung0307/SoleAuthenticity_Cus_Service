@@ -23,7 +23,7 @@ const Products = () => {
         }
 
         fetchData();
-    }, [])
+    }, [bid])
     return(
     <Layout>
         <Breadcrumb />

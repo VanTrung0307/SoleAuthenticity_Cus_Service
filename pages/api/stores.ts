@@ -3,7 +3,7 @@ import { stores } from './../../utils/data/stores';
 
 // fake data
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const getStores = (req: NextApiRequest, res: NextApiResponse) => {
   console.log(req);
 
   // fake loading time
@@ -11,3 +11,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     res.status(200).json(stores);
   }, 800);
 }
+
+export default getStores;
