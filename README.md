@@ -12,12 +12,15 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 ## Available pages
 
 - Home page: /
-- Products page: /products
+- Shop page: /products
 - Product single page: /product/1
 - Cart page: /cart
+- Checkout: /checkout
 - Login page: /login
 - Register page: /register
 - 404 page: /page-not-found
+- Review: /reviews
+- Store: /stores
 
 ## Screenshots
 
@@ -28,7 +31,16 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 ## Next TO-DO
 
 - [X] Checkout page
-- [ ] Add Facebook login
-- [ ] Add Google login
-- [ ] Add Proptypes on components
-- [ ] Use CSS variables instead of static colors
+- [X] Add Google login
+- [X] Add Proptypes on components
+- [X] Use CSS variables instead of static colors
+- [X] Payment E-Banking and Momo
+- [X] Introduce about mobile app
+- [X] Review Sneakers Posts
+- [X] Sneakers Shop
+- [X] Sneaker's Brand Sort and Filter
+- [X] Store have sneaker in Ho Chi Minh city
+- [ ] Mobile App
+
+
+
