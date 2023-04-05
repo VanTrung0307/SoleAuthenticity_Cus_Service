@@ -8,7 +8,7 @@ const CheckFeatured = () => {
   const { data } = useSwr('/api/checks', fetcher)
 
   return (
-    <section className="section section-products-featured">
+    <section style={{marginTop: '200px'}} className="section section-products-featured">
       <div className="container">
         <header className="section-products-featured__header">
           <h3>Checked</h3>

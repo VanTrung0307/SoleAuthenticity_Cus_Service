@@ -1,30 +1,27 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { RootState } from 'store'
-import CheckoutStatus from '../../components/checkout-status'
-import CheckoutItems from '../../components/checkout/items'
-// import { ProductStoreType } from 'types';
 import { debounce } from 'lodash'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import Modal from 'react-modal'
+import { useDispatch, useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { RootState } from 'store'
 import { removeProduct } from 'store/reducers/cart'
+import CheckoutStatus from '../../components/checkout-status'
+import CheckoutItems from '../../components/checkout/items'
 import Layout from '../../layouts/Main'
-import Link from 'next/link'
 
 const CheckoutPage = () => {
   const dispatch = useDispatch()
   const router = useRouter()
-  //const { errors } = useForm();
   const [address, setAddress] = useState<string>('')
-  // const [ids, setIds] = useState<number[]>();
   const listId: number[] = []
   const priceTotal = useSelector((state: RootState) => {
     const cartItems = state.cart.cartItems
     let totalPrice = 0
     if (cartItems.length > 0) {
       cartItems.map((item) => {
-        // console.log(item.noDiscount);
         if (item.salePrice != null) {
           totalPrice += item.salePrice * item.count
         } else {
@@ -41,27 +38,6 @@ const CheckoutPage = () => {
     return cartItems
   })
 
-  // const successful = () => {
-  //   toast.success("Đặt hàng thành công", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //     autoClose: false,
-  //   });
-  // };
-
-  // const fail = () => {
-  //   toast.error("Đơn hàng không hợp lệ, xin vui lòng kiểm tra lại thông tin", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //     autoClose: 20000,
-  //   });
-  // };
-
-  // const addressValidate = () => {
-  //   toast.error("Đơn hàng không hợp lệ, xin vui lòng kiểm tra lại thông tin", {
-  //     position: toast.POSITION.TOP_RIGHT,
-  //     autoClose: 20000,
-  //   });
-  // };
-
   const ids = useSelector((state: RootState) => {
     const cartItems = state.cart.cartItems
     if (cartItems.length > 0) {
@@ -72,13 +48,11 @@ const CheckoutPage = () => {
 
     return listId
   })
-  // console.log("is: ",typeof(listId));
 
   const listQuantities: number[] = []
 
   const quantities = useSelector((state: RootState) => {
     const cartItems = state.cart.cartItems
-    // console.log("cart", cartItems);
 
     if (cartItems.length > 0) {
       cartItems.map((item) => {
@@ -88,12 +62,6 @@ const CheckoutPage = () => {
 
     return listQuantities
   })
-  // console.log("count quanti", quantities);
-
-  // const handleInputAddress = (e: any) => {
-  //   // e.preventDefault();
-  //   setAddress(e.target.value);
-  // };
 
   type UserInfo = {
     _id: number
@@ -116,7 +84,6 @@ const CheckoutPage = () => {
 
   console.log('Address: ', address)
 
-  // setTimeout(() => {}, 500);
   async function handleCheckout() {
     if (address != '') {
       let createOrderData = {
@@ -124,7 +91,6 @@ const CheckoutPage = () => {
         customerId: accountUser?._id,
         shippingAddress: address,
       }
-      //console.log("hi", createOrderData);
       const response = await fetch(
         'https://soleauthenticity.azurewebsites.net/api/orders/order',
         {
@@ -137,9 +103,6 @@ const CheckoutPage = () => {
       const dataRes = await response.json()
       try {
         const promises = ids.map((id, index) => {
-          // console.log(id);
-          // console.log(dataRes.data);
-          // console.log(quantities[index]);
           const creatOrderDetailsData: any = {
             orderId: dataRes.data,
             productId: id,
@@ -165,8 +128,6 @@ const CheckoutPage = () => {
             'Đơn hàng không hợp lệ, xin vui lòng kiểm tra lại thông tin',
           )
         }
-        // successful();
-        //.log(responses);
 
         dispatch(removeProduct(cart))
         router.push('/')
@@ -178,16 +139,27 @@ const CheckoutPage = () => {
     }
   }
 
-  // const handleOnSubmit = () => {
-  //   if (address == "") {
-  //     toast.error("that bai");
-  //   }
-  //   return;
-  // };
-
   const handleClick = (e: any) => {
     e.preventDefault()
     router.push('/cart/checkout')
+  }
+
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('COD')
+  const [selectedQRCode, setSelectedQRCode] = useState(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const handlePaymentMethodChange = (event: any) => {
+    setSelectedPaymentMethod(event.target.value)
+  }
+
+  const handleQRCodeClick = (qrCode: any) => {
+    setSelectedQRCode(qrCode)
+    setModalIsOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setModalIsOpen(false)
+    setSelectedQRCode(null)
   }
 
   return (
@@ -236,9 +208,7 @@ const CheckoutPage = () => {
                             className="form__input form__input--sm"
                             placeholder="Address"
                             required
-                            // value={address}
                             onChange={handleChangeInputAddress}
-                            //onClick={addressValidate}
                           />
                         </div>
                       </div>
@@ -249,39 +219,85 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              {/* <div className="checkout__col-4">
-                <div className="block">
-                  <h3 className="block__title">Payment method</h3>
-                  <ul className="round-options round-options--three">
-                    <li
-                      className="round-item"
-                      style={{
-                        width: '100%',
-                        color: 'green',
-                        border: '1px solid green',
-                      }}
-                    >
-                      <i
-                        style={{ fontFamily: 'poppins' }}
-                        className="icon-delivery-fast"
-                      >
-                        Thanh toán khi nhận hàng
-                      </i>
-                    </li>
-                  </ul>
-                </div>
-              </div> */}
-
               <div className="checkout__col-4">
                 <div className="block">
                   <h3 className="block__title">Payment method</h3>
                   <div className="payment-options">
-                    <select className="payment-select">
+                    <select
+                      className="payment-select"
+                      value={selectedPaymentMethod}
+                      onChange={handlePaymentMethodChange}
+                    >
                       <option value="COD">COD</option>
                       <option value="E-Banking">E-Banking</option>
                     </select>
                   </div>
                 </div>
+                {selectedPaymentMethod === 'E-Banking' && (
+                  <div className="qr-code-container">
+                    <div className="notice">
+                      <p className="qr-code-notice">
+                        <strong>Nhấn vô hình để dễ quét mã QR dễ hơn</strong>
+                      </p>
+                    </div>
+
+                    <div className="qr-codes-wrapper">
+                      {/* Render your QR code components or images here */}
+                      <div className="qr-code-item">
+                        <img
+                          className="QR-Banking"
+                          src="\images\e-banking.jpg"
+                          alt="E-Banking"
+                          onClick={() => handleQRCodeClick('eBanking')}
+                        />
+                      </div>
+                      <span className="or-span">hoặc</span>
+                      <div className="qr-code-item">
+                        <img
+                          className="QR-Banking"
+                          src="\images\momo.jpg"
+                          alt="Momo"
+                          onClick={() => handleQRCodeClick('momo')}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="notice-banking">
+                      <p className="qr-code-notice">
+                        <strong>*Lưu ý:</strong>Các bạn nhớ ghi rõ nội dung như
+                        sau:
+                      </p>
+                      <p className="qr-code-notice">
+                        `Họ và tên` đã gửi tiền `Tên sản phẩm`
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <Modal
+                  className="banking-modal"
+                  isOpen={modalIsOpen}
+                  onRequestClose={handleCloseModal}
+                  contentLabel="QR Code Modal"
+                >
+                  {/* Render the bigger QR code image based on selectedQRCode */}
+                  {selectedQRCode === 'eBanking' && (
+                    <img
+                      className="model-bankingimg"
+                      src="\images\e-banking.jpg"
+                      alt="E-Banking"
+                    />
+                  )}
+                  {selectedQRCode === 'momo' && (
+                    <img
+                      className="model-bankingimg"
+                      src="\images\momo.jpg"
+                      alt="Momo"
+                    />
+                  )}
+                  <button className="close-modal" onClick={handleCloseModal}>
+                    X
+                  </button>
+                </Modal>
               </div>
 
               <div className="checkout__col-2">
@@ -321,47 +337,6 @@ const CheckoutPage = () => {
                     <a>Log In</a>
                   </Link>
                 )}
-                {/* <button
-                  onClick={handleCheckout}
-                  type="submit"
-                  className="btn btn--rounded btn--yellow"
-                >
-                  Proceed to payment
-                </button> */}
-                {/* {accountUser ? (
-                  <button
-                    onClick={
-                      accountUser && priceTotal > 0
-                        ? { handleCheckout } && successful
-                        : fail
-                    }
-                    type="submit"
-                    className="btn btn--rounded btn--yellow"
-                  >
-                    Proceed to payment
-                  </button>
-                ) : (
-                  <a href="/login">
-                    <button
-                      onClick={
-                        accountUser == null && priceTotal <= 0
-                          ? { handleCheckout } && fail
-                          : successful
-                      }
-                      type="submit"
-                      className="btn btn--rounded btn--yellow"
-                    >
-                      Proceed to payment
-                    </button>
-                  </a>
-                )} */}
-                {/* <button
-                  className="btn btn--rounded btn--yellow"
-                  type="button"
-                  onClick={() => handleCheckout()}
-                >
-                  Proceed to payment
-                </button> */}
 
                 <ToastContainer />
               </div>

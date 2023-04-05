@@ -1,12 +1,11 @@
-import Layout from '../layouts/Main'
+import Footer from '../components/footer'
 import PageIntro from '../components/page-intro'
 import ProductsFeatured from '../components/products-featured'
-import Footer from '../components/footer'
 import Subscribe from '../components/subscribe'
-import ReviewsFeatured from './../components/reviews-featured/index'
+import Layout from '../layouts/Main'
 import CheckFeatured from './../components/check-featured/index'
 import Download from './../components/download-banner/index'
-import Image from 'next/image'
+import ReviewsFeatured from './../components/reviews-featured/index'
 
 const IndexPage = () => {
   return (
@@ -151,42 +150,15 @@ const IndexPage = () => {
           </h6>
         </div>
         <div className="logo-content">
-          <Image
-            className="brand-img"
-            src="/brand-img/nike.png"
-            alt="nike"
-            width={100}
-            height={70}
-            style={{ padding: '100px' }}
-          />
-          <Image
+          <img className="brand-img" src="/brand-img/nike.png" alt="nike" />
+          <img
             className="brand-img"
             src="/brand-img/newBlance.png"
             alt="newBalance"
-            width={100}
-            height={70}
           />
-          <Image
-            className="brand-img"
-            src="/brand-img/vans.png"
-            alt="vans"
-            width={100}
-            height={70}
-          />
-          <Image
-            className="brand-img"
-            src="/brand-img/puma.png"
-            alt="puma"
-            width={100}
-            height={70}
-          />
-          <Image
-            className="brand-img"
-            src="/brand-img/jordan.png"
-            alt="jordan"
-            width={100}
-            height={70}
-          />
+          <img className="brand-img" src="/brand-img/vans.png" alt="vans" />
+          <img className="brand-img" src="/brand-img/puma.png" alt="puma" />
+          <img className="brand-img" src="/brand-img/jordan.png" alt="jordan" />
         </div>
       </section>
 
