@@ -164,7 +164,7 @@ const CheckoutPage = () => {
   }
 
   const handleContinueShopping = () => {
-    window.location.href = '/products';
+    window.location.href = '/products'
   }
 
   return (
@@ -326,7 +326,11 @@ const CheckoutPage = () => {
               </Link>
 
               <div className="cart-actions__items-wrapper">
-                <button onClick={handleContinueShopping} type="button" className="btn btn--rounded btn--border">
+                <button
+                  onClick={handleContinueShopping}
+                  type="button"
+                  className="btn btn--rounded btn--border"
+                >
                   Tiếp tục mua sắm
                 </button>
                 {accountUser ? (
@@ -339,7 +343,12 @@ const CheckoutPage = () => {
                   </button>
                 ) : (
                   <Link href="/login">
-                    <a>Đăng nhập</a>
+                    <button
+                      type="button"
+                      className="btn btn--rounded btn--yellow"
+                    >
+                      Đăng nhập
+                    </button>
                   </Link>
                 )}
 
