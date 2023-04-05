@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 // import { some } from "lodash";
 // import { useDispatch, useSelector } from "react-redux";

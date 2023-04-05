@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { debounce } from 'lodash'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

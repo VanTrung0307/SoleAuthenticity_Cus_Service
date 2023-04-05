@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import SwiperCore, { Navigation, Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 

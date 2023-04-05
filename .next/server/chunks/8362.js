@@ -18,7 +18,7 @@ exports.modules = {
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6022);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
 
-
+/* eslint-disable @next/next/no-img-element */ 
 
 
 const ProductItem = ({ imgPath , id , name , price  })=>{

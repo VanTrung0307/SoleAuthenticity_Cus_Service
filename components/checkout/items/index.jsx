@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Image from 'next/image';

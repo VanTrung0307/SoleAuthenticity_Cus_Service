@@ -14,7 +14,7 @@ exports.modules = {
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 
-// import Link from "next/link";
+/* eslint-disable @next/next/no-img-element */ // import Link from "next/link";
 // import dayjs from "dayjs";
 
 function Post(props) {

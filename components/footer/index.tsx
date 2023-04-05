@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Logo from '../../assets/icons/logo'
 
 const Footer = () => {

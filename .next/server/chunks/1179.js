@@ -13,7 +13,7 @@ exports.modules = {
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_icons_logo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4427);
 
-
+/* eslint-disable @next/next/no-img-element */ 
 const Footer = ()=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("footer", {
         className: "site-footer",

@@ -63,7 +63,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_pages_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_7__]);
 _pages_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
-/* eslint-disable jsx-a11y/alt-text */ /* eslint-disable @next/next/no-img-element */ 
+/* eslint-disable react-hooks/exhaustive-deps */ /* eslint-disable jsx-a11y/alt-text */ /* eslint-disable @next/next/no-img-element */ 
 
 
 
