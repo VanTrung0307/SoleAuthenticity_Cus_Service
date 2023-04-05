@@ -4,6 +4,37 @@ exports.id = 2888;
 exports.ids = [2888];
 exports.modules = {
 
+/***/ 446:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const ChatBox = ({ widgetId  })=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        const tawk = document.createElement("script");
+        tawk.id = "tawk.to";
+        tawk.async = true;
+        tawk.src = "https://embed.tawk.to/" + widgetId + "/default";
+        const s = document.getElementsByTagName("script")[0];
+        s.parentNode?.insertBefore(tawk, s);
+    }, [
+        widgetId
+    ]);
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {});
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChatBox);
+
+
+/***/ }),
+
 /***/ 3847:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -22,12 +53,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_swiper_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_scss__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _utils_gtag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(687);
 /* harmony import */ var _api_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(239);
+/* harmony import */ var _components_chatbox_chatbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(446);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__]);
 _api_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
 // global styles
+
 
 
 
@@ -41,10 +74,15 @@ if (isProduction) {
     next_router__WEBPACK_IMPORTED_MODULE_1___default().events.on("routeChangeComplete", (url)=>_utils_gtag__WEBPACK_IMPORTED_MODULE_4__/* .pageview */ .LV(url)
     );
 }
-const MyApp = ({ Component , pageProps  })=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__/* .AuthContextProvider */ .H, {
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-            ...pageProps
-        })
+const MyApp = ({ Component , pageProps  })=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__/* .AuthContextProvider */ .H, {
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+                ...pageProps
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_chatbox_chatbox__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+                widgetId: "1gt8v6vl7"
+            })
+        ]
     })
 ;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_store__WEBPACK_IMPORTED_MODULE_2__/* .wrapper.withRedux */ .Y.withRedux(MyApp));
