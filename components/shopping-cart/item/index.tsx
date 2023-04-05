@@ -70,7 +70,7 @@ const ShoppingCart = ({ imgPath, name, id, size, count, salePrice, noDiscount }:
           </button>
         </div>
       </td>
-      <td>{salePrice ? salePrice : noDiscount} đ</td>
+      <td>{(salePrice ? salePrice : noDiscount).toLocaleString()} đ</td>
       <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart()}></i></td>
     </tr>
   )

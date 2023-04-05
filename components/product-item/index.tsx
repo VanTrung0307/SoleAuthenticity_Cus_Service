@@ -45,9 +45,9 @@ const ProductItem = ({ imgPath, id, name, price }: ProductTypeList) => {
       <div className="product__description">
         <h3>{name}</h3>
         <div className="product__price product__price--discount">
-          <h4>{price} đ</h4>
+          <h4>{price.toLocaleString()} đ</h4>
 
-          <span style={{ textDecoration: 'line-through' }}>{price} đ</span>
+          <span style={{ textDecoration: 'line-through' }}>{price.toLocaleString()} đ</span>
         </div>
       </div>
     </div>

@@ -312,7 +312,7 @@ const CheckoutPage = () => {
 
                   <div className="checkout-total">
                     <p>Tổng tiền</p>
-                    <h3>{priceTotal} đ</h3>
+                    <h3>{priceTotal.toLocaleString()} đ</h3>
                   </div>
                 </div>
               </div>

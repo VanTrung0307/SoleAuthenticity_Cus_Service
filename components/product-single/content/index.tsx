@@ -72,15 +72,15 @@ const Content = ({ product }: any) => {
         <h2 className="product__name">{product.name}</h2>
 
         <div className="product__prices">
-          <h4>{product.currentPrice ? product.currentPrice + "VNĐ" : ""}</h4>
+          <h4>{product.currentPrice ? product.currentPrice.toLocaleString() + "VNĐ" : ""}</h4>
           <h4>
             {product.currentPrice
               ? product.discount && (
                   <span style={{ textDecoration: "line-through" }}>
-                    {product.price} VNĐ
+                    {product.price.toLocaleString()} VNĐ
                   </span>
                 )
-              : product.price + " " +"VNĐ"}
+              : product.price.toLocaleString() + " " +"VNĐ"}
           </h4>
         </div>
       </div>

@@ -118,7 +118,7 @@ const ShoppingCart = () => {
 
           <div className="cart-actions__items-wrapper">
             <p className="cart-actions__total">
-              Tổng tiền <strong>{priceTotal().toFixed(2)} đ</strong>
+              Tổng tiền <strong>{priceTotal().toLocaleString()} đ</strong>
             </p>
             {cartItems.length > 0 ? (
               <>
