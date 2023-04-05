@@ -12,7 +12,6 @@ import '../assets/css/styles.scss';
 
 import * as gtag from './../utils/gtag';
 import { AuthContextProvider } from './api/context/AuthContext';
-import ChatBox from './../components/chatbox/chatbox';
 
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -27,7 +26,7 @@ if(isProduction) {
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <AuthContextProvider>
     <Component {...pageProps} />
-    <ChatBox page_id="104355565931530" />
+    {/* <ChatBox page_id="104355565931530" /> */}
   </AuthContextProvider>
 );
 
