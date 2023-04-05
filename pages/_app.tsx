@@ -27,7 +27,7 @@ if(isProduction) {
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <AuthContextProvider>
     <Component {...pageProps} />
-    <ChatBox page_id="100090712598917" />
+    <ChatBox page_id="104355565931530" />
   </AuthContextProvider>
 );
 

@@ -92,7 +92,7 @@ const MyApp = ({ Component , pageProps  })=>/*#__PURE__*/ (0,react_jsx_runtime__
                 ...pageProps
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_chatbox_chatbox__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
-                page_id: "100090712598917"
+                page_id: "104355565931530"
             })
         ]
     })
