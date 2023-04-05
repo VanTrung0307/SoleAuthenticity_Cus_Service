@@ -14,7 +14,7 @@ exports.modules = {
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 
-
+/* eslint-disable @next/next/no-img-element */ 
 const Download = ()=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
         className: "download",
@@ -27,16 +27,16 @@ const Download = ()=>{
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
                             className: "slogan-text",
                             children: [
-                                "WANT TO KNOW ",
+                                "B\u1EA0N MU\u1ED0N BI\u1EBET ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: "green-text",
-                                    children: "REAL"
+                                    children: "H\xc0NG TH\u1EACT"
                                 }),
-                                " OR",
+                                " HAY",
                                 " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: "red-text",
-                                    children: "REPLICA"
+                                    children: "H\xc0NG NH\xc1I"
                                 }),
                                 "?"
                             ]
@@ -44,21 +44,21 @@ const Download = ()=>{
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
                             className: "slogan-text",
                             children: [
-                                "Download ",
+                                "T\u1EA3i ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: "orange-text",
                                     children: "SoleAuthenticity"
                                 }),
-                                " now"
+                                " ngay"
                             ]
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
                             className: "slogan-text",
                             children: [
-                                "for ",
+                                "\u0111\u1EC3 ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: "orange-text",
-                                    children: "AUTHENTICATION"
+                                    children: "X\xc1C TH\u1EF0C"
                                 })
                             ]
                         })
@@ -107,7 +107,7 @@ const Download = ()=>{
                     className: "logo-right",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                         className: "authen",
-                        src: "/images/logos/applogo.png",
+                        src: "/images/logos/applogo-black.png",
                         alt: "authen"
                     })
                 })

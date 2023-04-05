@@ -83,7 +83,7 @@ const ProductsFeatured = ()=>{
                     className: "section-products-featured__header",
                     children: [
                         /*#__PURE__*/ jsx_runtime_.jsx("h3", {
-                            children: "Footwear"
+                            children: "S\u1EA3n ph\u1EA9m"
                         }),
                         /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                             href: "/products",
@@ -92,7 +92,7 @@ const ProductsFeatured = ()=>{
                                     " ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("a", {
                                         className: "btn btn--rounded btn--border",
-                                        children: "Show All"
+                                        children: "XEM T\u1EA4T C\u1EA2"
                                     })
                                 ]
                             })

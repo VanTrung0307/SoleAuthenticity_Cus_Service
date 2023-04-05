@@ -27,10 +27,10 @@ const ReviewsFeatured = () => {
     <section className="section section-products-featured">
       <div className="container">
         <header className="section-products-featured__header">
-          <h3>Reviews</h3>
+          <h3>Bài đánh giá</h3>
           <Link href="/reviews">
             <div>
-              <a className="btn btn--rounded btn--border">Show All</a>
+              <a className="btn btn--rounded btn--border">XEM TẤT CẢ</a>
             </div>
           </Link>
         </header>

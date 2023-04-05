@@ -68,7 +68,7 @@ export default function Previews() {
               textAlign: 'center'
             }}
           >
-            All previews
+            Tất cả các bài đánh giá
           </p>
 
           <section className="products-page">

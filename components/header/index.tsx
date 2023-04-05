@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import { Fragment, useEffect, useRef, useState } from 'react'
@@ -111,6 +113,11 @@ const Header = ({ isErrorPage }: HeaderType) => {
           ref={navRef}
           className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}
         >
+          <Link href="/products">
+            <a className="nav-link nav-link-grow-up" href="#">
+              Shop
+            </a>
+          </Link>
           <Link href="/reviews">
             <a className="nav-link nav-link-grow-up" href="#">
               Reviews
@@ -119,11 +126,6 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <Link href="/about">
             <a className="nav-link nav-link-grow-up" href="#">
               About
-            </a>
-          </Link>
-          <Link href="/products">
-            <a className="nav-link nav-link-grow-up" href="#">
-              Shop
             </a>
           </Link>
           {/* <div className="dropdown" style={{ cursor: "pointer" }}>
@@ -181,7 +183,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                 <a>{`$accountUser`}</a>
               </Fragment>
             ) : (
-              <a>Account</a>
+              <a>Tài khoản</a>
             )}
           </button>
         </nav>
@@ -198,7 +200,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                 className="icon-cancel"
                 onClick={() => setSearchOpen(!searchOpen)}
               ></i>
-              <input type="text" name="search" placeholder="Searching....." />
+              <input type="text" name="search" placeholder="Tìm kiếm....." />
             </form>
             <i
               onClick={() => setSearchOpen(!searchOpen)}
@@ -230,7 +232,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                     style={{ borderRadius: '0 0 10px 10px', cursor: 'pointer' }}
                   >
                     <img src="/images/logos/logout.png" />
-                    Log Out
+                    Đăng xuất
                   </a>
                 </Fragment>
               ) : (
@@ -239,7 +241,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
                     <div style={{ borderRadius: '10px', cursor: 'pointer' }}>
                       <a>
                         <img src="/images/logos/enter.png" />
-                        Log In
+                        Đăng nhập
                       </a>
                     </div>
                   </Link>

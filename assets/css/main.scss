@@ -759,7 +759,7 @@ h5 {
             margin-bottom: 7px;
           }
           p {
-            font-size: 12px;
+            font-size: 11px;
             line-height: 135%;
           }
         }
@@ -818,6 +818,7 @@ h5 {
         width: 150px;
         border-radius: 100px;
         text-align: center;
+        cursor: pointer;
         i {
           justify-content: center;
           align-items: center;
@@ -2615,6 +2616,7 @@ h5 {
     width: 448px;
   }
   .form-block__title {
+    width: 100%;
     font-size: 60px;
     font-weight: 600;
     padding: 0 50px;
@@ -2715,7 +2717,7 @@ h5 {
     justify-content: space-between;
     display: flex;
     .btn-social {
-      width: 48%;
+      width: 70%;
     }
   }
   .btn-submit {
@@ -3049,7 +3051,6 @@ h5 {
   padding: 30px;
 }
 
-
 @media (max-width: 768px) {
   .logo-content {
     height: 120px;
@@ -3072,7 +3073,6 @@ h5 {
   padding: 20px;
 }
 
-
 @media (max-width: 768px) {
   .brand-img {
     width: 80px;
@@ -3084,9 +3084,10 @@ h5 {
 }
 
 .download {
-  background-color: #24272b;
-  padding: 50px 0;
+  background-color: white;
+  //padding: 50px 0;
   text-align: center;
+  margin-top: -10px;
 }
 
 .download-container {
@@ -3099,7 +3100,7 @@ h5 {
 }
 
 .slogan-text {
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 35px;
   margin-bottom: 20px;
@@ -3129,7 +3130,7 @@ h5 {
 
 .download-img img {
   margin: 0 20px;
-  width: 150px;
+  width: 170px;
 }
 
 .logo-left {
@@ -3277,7 +3278,7 @@ h5 {
   display: none;
   position: absolute;
   background-color: white;
-  width: 120px;
+  width: 150px;
 
   z-index: 1;
   border-radius: 10px;
@@ -3556,10 +3557,10 @@ h5 {
 }
 
 .input-text {
-  width: 300px;
+  width: 340px;
   height: 50px;
   background-color: #f0eccf;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   margin-top: 25px;
   display: flex;
   align-items: center;
@@ -3574,7 +3575,7 @@ h5 {
 
 .input-text p {
   background-color: #000000;
-  width: 100px;
+  width: 250px;
   height: 50px;
   border-radius: 0 10px 10px 0;
   font-size: 15px;
@@ -3698,4 +3699,69 @@ h5 {
   border: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.about-section {
+  background: white;
+  padding: 24px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-section .about-container img {
+  height: 350px;
+  padding: 24px 0px;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+.section-header-title {
+  width: 100%;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.section-header-subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 12px 0;
+  margin-bottom: 12px;
+}
+
+.section-content {
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-content {
+    font-size: 16px;
+    max-width: 500px;
+  }
 }

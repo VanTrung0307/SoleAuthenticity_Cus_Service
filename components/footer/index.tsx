@@ -19,8 +19,9 @@ const Footer = () => {
               </a>
             </h6>
             <p>
-              House My Brand designs clothing for the young, the old & everyone
-              in between – but most importantly, for the fashionable
+              SoleAuthenticity cung cấp cho khách hàng những mặt hàng chất lượng
+              và tốt nhất từ những cửa hàng đã liên kết với chung - quan trọng
+              nhất là hàng chính hãng
             </p>
             <ul className="site-footer__social-networks">
               <li>
@@ -28,7 +29,7 @@ const Footer = () => {
                   <img
                     src="/images/icons/fb.png"
                     alt="Facebook"
-                    style={{width: '40px', height: '30px'}}
+                    style={{ width: '40px', height: '30px' }}
                   />
                 </a>
               </li>
@@ -37,7 +38,7 @@ const Footer = () => {
                   <img
                     src="/images/icons/tiktok.png"
                     alt="TikTok"
-                    style={{width: '30px', height: '30px'}}
+                    style={{ width: '30px', height: '30px' }}
                   />
                 </a>
               </li>

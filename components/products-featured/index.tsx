@@ -22,11 +22,11 @@ const ProductsFeatured = () => {
     <section className="section section-products-featured">
       <div className="container">
         <header className="section-products-featured__header">
-          <h3>Footwear</h3>
+          <h3>Sản phẩm</h3>
           <Link href="/products">
             <div>
               {' '}
-              <a className="btn btn--rounded btn--border">Show All</a>
+              <a className="btn btn--rounded btn--border">XEM TẤT CẢ</a>
             </div>
           </Link>
         </header>

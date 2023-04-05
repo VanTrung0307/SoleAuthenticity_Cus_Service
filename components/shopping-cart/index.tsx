@@ -58,7 +58,7 @@ const ShoppingCart = () => {
     <section className="cart">
       <div className="container">
         <div className="cart__intro">
-          <h3 className="cart__title">Shopping Cart</h3>
+          <h3 className="cart__title">Giỏ hàng</h3>
           <CheckoutStatus step="cart" />
         </div>
 
@@ -67,11 +67,11 @@ const ShoppingCart = () => {
             <table>
               <tbody>
                 <tr>
-                  <th style={{ textAlign: 'left' }}>Product</th>
-                  <th>Color</th>
+                  <th style={{ textAlign: 'left' }}>Sản Phẩm</th>
+                  {/* <th>Color</th> */}
                   <th>Size</th>
-                  <th>Ammount</th>
-                  <th>Price</th>
+                  <th>Số lượng</th>
+                  <th>Giá</th>
                   <th></th>
                 </tr>
 
@@ -100,30 +100,30 @@ const ShoppingCart = () => {
             </table>
           )}
 
-          {cartItems.length === 0 && <p>Nothing in the cart</p>}
+          {cartItems.length === 0 && <p>Giỏ hàng của bạn đang trống</p>}
         </div>
 
         <div className="cart-actions">
           <Link href="/products">
             <a className="cart__btn-back">
-              <i className="icon-left"></i> Continue Shopping
+              <i className="icon-left"></i> Tiếp tục mua sắm
             </a>
           </Link>
 
           <input
             type="text"
-            placeholder="Promo Code"
+            placeholder="Mã Khuyến Mãi"
             className="cart__promo-code"
           />
 
           <div className="cart-actions__items-wrapper">
             <p className="cart-actions__total">
-              Total cost <strong>{priceTotal().toFixed(2)} đ</strong>
+              Tổng tiền <strong>{priceTotal().toFixed(2)} đ</strong>
             </p>
             {cartItems.length > 0 ? (
               <>
                 <Link href="/cart/checkout">
-                  <a className="btn btn--rounded btn--yellow">Checkout</a>
+                  <a className="btn btn--rounded btn--yellow">Thanh toán</a>
                 </Link>
               </>
             ) : (
@@ -135,7 +135,7 @@ const ShoppingCart = () => {
                   backgroundColor: cartItems.length === 0 ? '#e6e6e6' : '',
                 }}
               >
-                Checkout
+                Thanh toán
               </button>
             )}
           </div>

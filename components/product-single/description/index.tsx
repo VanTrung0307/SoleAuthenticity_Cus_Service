@@ -16,7 +16,7 @@ const Description = ({ show, product }: ProductDescriptionType) => {
     <section style={style} className="product-single__description">
       <div className="product-description-block">
         <i className="icon-cart"></i>
-        <h4>Details and product description</h4>
+        <h4>Thông tin chi tiết và mô tả sản phẩm</h4>
         {/* <p>White Summer Vibes T-shirt in the uiKit line with a colorful print. Made of jersey cotton. T-shirt fits perfectly with jeans, pants or shorts.</p> */}
         <p>{product.description}</p>
       </div>

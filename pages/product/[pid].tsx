@@ -67,7 +67,7 @@ const Product = () => {
                       showBlock === 'description' ? 'btn--active' : ''
                     }`}
                   >
-                    Description
+                    Mô tả
                   </button>
                   <button
                     type="button"
@@ -76,7 +76,7 @@ const Product = () => {
                       showBlock === 'reviews' ? 'btn--active' : ''
                     }`}
                   >
-                    Reviews (2)
+                    Đánh Giá Sản Phẩm (2)
                   </button>
                 </div>
 

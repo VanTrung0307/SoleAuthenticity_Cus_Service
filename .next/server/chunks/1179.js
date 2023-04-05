@@ -54,7 +54,7 @@ const Footer = ()=>{
                                 ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                                children: "House My Brand designs clothing for the young, the old & everyone in between \u2013 but most importantly, for the fashionable"
+                                children: "SoleAuthenticity cung c\u1EA5p cho kh\xe1ch h\xe0ng nh\u1EEFng m\u1EB7t h\xe0ng ch\u1EA5t l\u01B0\u1EE3ng v\xe0 t\u1ED1t nh\u1EA5t t\u1EEB nh\u1EEFng c\u1EEDa h\xe0ng \u0111\xe3 li\xean k\u1EBFt v\u1EDBi chung - quan tr\u1ECDng nh\u1EA5t l\xe0 h\xe0ng ch\xednh h\xe3ng"
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
                                 className: "site-footer__social-networks",

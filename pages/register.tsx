@@ -10,7 +10,7 @@ const RegisterPage = () => (
           <Link href="/products">
             <div>
               <a>
-                <i className="icon-left"></i> Back to store
+                <i className="icon-left"></i> Quay lại của hàng
               </a>
             </div>
           </Link>
@@ -18,14 +18,14 @@ const RegisterPage = () => (
 
         <div className="form-block">
           <h2 className="form-block__title_signup">
-            Create an account and discover the benefits
+          Tạo một tài khoản và khám phá những lợi ích
           </h2>
 
           <form className="form">
             <div className="form__input-row">
               <input
                 className="form__input"
-                placeholder="First Name"
+                placeholder="Họ"
                 type="text"
               />
             </div>
@@ -33,7 +33,7 @@ const RegisterPage = () => (
             <div className="form__input-row">
               <input
                 className="form__input"
-                placeholder="Last Name"
+                placeholder="Tên"
                 type="text"
               />
             </div>
@@ -46,7 +46,7 @@ const RegisterPage = () => (
               <input
                 className="form__input"
                 type="Password"
-                placeholder="Password"
+                placeholder="Mật khẩu"
               />
             </div>
 
@@ -63,7 +63,7 @@ const RegisterPage = () => (
                   />
                   <span className="checkbox__check"></span>
                   <p>
-                    I agree to the Google Terms of Service and Privacy Policy
+                  Tôi đồng ý với Điều khoản dịch vụ và Chính sách bảo mật của Google
                   </p>
                 </label>
               </div>
@@ -73,12 +73,12 @@ const RegisterPage = () => (
               type="button"
               className="btn btn--rounded btn--yellow btn-submit"
             >
-              Sign up
+              Đăng kí
             </button>
 
             <p className="form__signup-link">
               <Link href="/login">
-                <a href="#">Are you already a member?</a>
+                <a href="#">Bạn đã là thành viên?</a>
               </Link>
             </p>
           </form>

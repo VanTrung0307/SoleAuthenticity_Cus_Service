@@ -63,7 +63,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_pages_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_7__]);
 _pages_api_context_AuthContext__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
-
+/* eslint-disable jsx-a11y/alt-text */ /* eslint-disable @next/next/no-img-element */ 
 
 
 
@@ -164,6 +164,14 @@ const Header = ({ isErrorPage  })=>{
                     className: `site-nav ${menuOpen ? "site-nav--open" : ""}`,
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
+                            href: "/products",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                className: "nav-link nav-link-grow-up",
+                                href: "#",
+                                children: "Shop"
+                            })
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                             href: "/reviews",
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                 className: "nav-link nav-link-grow-up",
@@ -177,14 +185,6 @@ const Header = ({ isErrorPage  })=>{
                                 className: "nav-link nav-link-grow-up",
                                 href: "#",
                                 children: "About"
-                            })
-                        }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                            href: "/products",
-                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                className: "nav-link nav-link-grow-up",
-                                href: "#",
-                                children: "Shop"
                             })
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
@@ -210,7 +210,7 @@ const Header = ({ isErrorPage  })=>{
                                     children: `$accountUser`
                                 })
                             }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                children: "Account"
+                                children: "T\xe0i kho\u1EA3n"
                             })
                         })
                     ]
@@ -232,7 +232,7 @@ const Header = ({ isErrorPage  })=>{
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
                                             type: "text",
                                             name: "search",
-                                            placeholder: "Searching....."
+                                            placeholder: "T\xecm ki\u1EBFm....."
                                         })
                                     ]
                                 }),
@@ -289,7 +289,7 @@ const Header = ({ isErrorPage  })=>{
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                                         src: "/images/logos/logout.png"
                                                     }),
-                                                    "Log Out"
+                                                    "\u0110\u0103ng xu\u1EA5t"
                                                 ]
                                             })
                                         ]
@@ -306,7 +306,7 @@ const Header = ({ isErrorPage  })=>{
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                                             src: "/images/logos/enter.png"
                                                         }),
-                                                        "Log In"
+                                                        "\u0110\u0103ng nh\u1EADp"
                                                     ]
                                                 })
                                             })

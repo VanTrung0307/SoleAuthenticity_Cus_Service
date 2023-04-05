@@ -25,13 +25,13 @@ const ForgotPassword = () => {
         <div className="container">
           <div className="back-button-section">
             <Link href="/products">
-              <a><i className="icon-left"></i> Back to shop</a>
+              <a><i className="icon-left"></i> Quay lại cửa hàng</a>
             </Link>
           </div>
 
           <div className="form-block">
-            <h2 className="form-block__title">Forgot your password?</h2>
-            <p className="form-block__description">Enter your email or phone number and recover your account</p>
+            <h2 style={{ width: '600px', alignItems: 'center', justifyContent: 'center', marginLeft: '-60px'}} className="form-block__title">Quên mật khẩu?</h2>
+            <p style={{paddingTop: '30px'}} className="form-block__description">Nhập email hoặc số điện thoại của bạn và khôi phục tài khoản của bạn</p>
             
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form__input-row">
@@ -47,11 +47,11 @@ const ForgotPassword = () => {
                 />
 
                 {errors.email && errors.email.type === 'required' && 
-                  <p className="message message--error">This field is required</p>
+                  <p className="message message--error">Bạn bắt buộc phải nhập vào ô này</p>
                 }
 
                 {errors.email && errors.email.type === 'pattern' && 
-                  <p className="message message--error">Please write a valid email</p>
+                  <p className="message message--error">Hãy viết một email hợp lệ</p>
                 }
               </div>
               
@@ -59,16 +59,16 @@ const ForgotPassword = () => {
                 <input 
                   className="form__input" 
                   type="password" 
-                  placeholder="Password" 
+                  placeholder="Mật khẩu" 
                   name="password"
                   ref={register({ required: true })}
                 />
                 {errors.password && errors.password.type === 'required' && 
-                  <p className="message message--error">This field is required</p>
+                  <p className="message message--error">Bạn bắt buộc phải nhập vào ô này</p>
                 }
               </div>
 
-              <button type="submit" className="btn btn--rounded btn--yellow btn-submit">Reset password</button>
+              <button type="submit" className="btn btn--rounded btn--yellow btn-submit">Đặt lại mật khẩu</button>
             </form>
           </div>
 

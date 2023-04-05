@@ -23,7 +23,7 @@ const ReviewDetailcrumb = ({ review }: ReviewDetailCrumbType) => {
           <li>
             <Link href="/reviews">
               <div>
-                <a>All Reviews</a>
+                <a>Các bài đánh giá</a>
               </div>
             </Link>
           </li>

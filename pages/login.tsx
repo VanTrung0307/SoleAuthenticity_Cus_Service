@@ -66,7 +66,7 @@ const LoginPage = () => {
           <div className="back-button-section">
             <Link href="/products">
               <a>
-                <i className="icon-left"></i> Back to store
+                <i className="icon-left"></i> Quay lại cửa hàng
               </a>
             </Link>
           </div>
@@ -84,7 +84,7 @@ const LoginPage = () => {
               src="/images/jordan.gif"
               alt="Jordan"
             />
-            <h2 className="form-block__title">Log in</h2>
+            <h2 className="form-block__title">Đăng nhập</h2>
             <form className="form">
               <div className="form__input-row">
                 <input
@@ -100,13 +100,13 @@ const LoginPage = () => {
 
                 {errors.email && errors.email.type === 'required' && (
                   <p className="message message--error">
-                    This field is required
+                    Bạn bắt buộc phải nhập vào ô này
                   </p>
                 )}
 
                 {errors.email && errors.email.type === 'pattern' && (
                   <p className="message message--error">
-                    Please write a valid email
+                    Hãy viết một email hợp lệ
                   </p>
                 )}
               </div>
@@ -115,13 +115,13 @@ const LoginPage = () => {
                 <input
                   className="form__input"
                   type="password"
-                  placeholder="Password"
+                  placeholder="mật khẩu"
                   name="password"
                   ref={register({ required: true })}
                 />
                 {errors.password && errors.password.type === 'required' && (
                   <p className="message message--error">
-                    This field is required
+                    Bạn bắt buộc phải nhập vào ô này
                   </p>
                 )}
               </div>
@@ -139,14 +139,14 @@ const LoginPage = () => {
                       ref={register({ required: false })}
                     />
                     <span className="checkbox__check"></span>
-                    <p>Keep me signed in</p>
+                    <p>Giữ đăng nhập</p>
                   </label>
                 </div>
                 <a
                   href="/forgot-password"
                   className="form__info__forgot-password"
                 >
-                  Forgot password?
+                  Quên mật khẩu?
                 </a>
               </div>
 
@@ -164,7 +164,7 @@ const LoginPage = () => {
                   style={{ alignItems: 'center' }}
                 >
                   <img src="/images/icons/google.svg" alt="google" />
-                  Google
+                  Đăng nhập bằng Google
                 </button>
               </div>
 
@@ -172,7 +172,7 @@ const LoginPage = () => {
                 type="submit"
                 className="btn btn--rounded btn--yellow btn-submit"
                 style={{
-                  width: '220px',
+                  width: '70%',
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -180,11 +180,11 @@ const LoginPage = () => {
                   marginTop: '20px',
                 }}
               >
-                Sign in
+                Đăng nhập
               </button>
 
               <p className="form__signup-link">
-                Not a member yet? <a href="/register">Sign up</a>
+              Chưa phải là thành viên? <a href="/register">Đăng kí</a>
               </p>
             </form>
           </div>

@@ -65,9 +65,9 @@ const Content = ({ product }: any) => {
   return (
     <section className="product-content">
       <div className="product-content__intro">
-        <h5 className="product__id">Product ID: {product.id}</h5>
+        <h5 className="product__id">Mã sản phẩm: {product.id}</h5>
         <span className="product-on-sale">
-          {product.currentPrice ? product.discount + "%" : product.discount === 'Sold Out' ? 'Sold Out' : "No Discount"}
+          {product.currentPrice ? product.discount + "%" : product.discount === 'Hết Hàng' ? "Không Giảm Giá" : 'ヾ(≧▽≦*)o'}
         </span>
         <h2 className="product__name">{product.name}</h2>
 
@@ -103,7 +103,7 @@ const Content = ({ product }: any) => {
         </div> */}
         <div className="product-filter-item">
           <h5>
-            Size: <strong>See size table</strong>
+            Size:
           </h5>
           <div className="checkbox-color-wrapper">
             <div className="select-wrapper">
@@ -117,7 +117,7 @@ const Content = ({ product }: any) => {
           </div>
         </div>
         <div className="product-filter-item">
-          <h5>Quantity:</h5>
+          <h5>Số lượng:</h5>
           <div className="quantity-buttons">
             <div className="quantity-button">
               <button
@@ -147,7 +147,7 @@ const Content = ({ product }: any) => {
                 opacity: product.discount === "Sold Out" ? 0.4 : '',
               }}
             >
-              Add to cart
+              Thêm vào giỏ
             </button>
             <button
               type="button"

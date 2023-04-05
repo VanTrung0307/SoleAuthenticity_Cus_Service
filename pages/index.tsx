@@ -19,24 +19,27 @@ const IndexPage = () => {
             className="featured-item featured-item-large"
           >
             <div className="featured-item__content">
-              <h3>Our Fanpage</h3>
+              <h3>Fanpage SoleAuthenticity</h3>
               <a
                 href="https://www.facebook.com/soleAuthenticity"
                 className="btn btn--rounded"
               >
-                JOIN US
+                THAM GIA NGAY
               </a>
             </div>
           </article>
 
           <article
-            style={{ backgroundImage: 'url(/images/featured-2.jpg)' }}
+            style={{
+              backgroundImage:
+                'url(https://firebasestorage.googleapis.com/v0/b/soleauthenticity-8f48f.appspot.com/o/images%2F2b37efd73ccb223ba692ecee8106a259.jpg?alt=media&token=b17576d9-9611-48a4-991b-c0e4b8d5374d)',
+            }}
             className="featured-item featured-item-small-first"
           >
             <div className="featured-item__content">
-              <h3>Basic sneakers $29,99</h3>
+              <h3>New Balance 530 1.850.000đ</h3>
               <a href="#" className="btn btn--rounded">
-                More details
+                Chi Tiết
               </a>
             </div>
           </article>
@@ -49,12 +52,12 @@ const IndexPage = () => {
             className="featured-item featured-item-small"
           >
             <div className="featured-item__content">
-              <h3>Our TikTok</h3>
+              <h3>Tiktok SoleAuthenticity</h3>
               <a
                 href="https://www.tiktok.com/@soleauthenticity"
                 className="btn btn--rounded"
               >
-                GO TO TIKTOK
+                XEM NGAY
               </a>
             </div>
           </article>
@@ -68,17 +71,17 @@ const IndexPage = () => {
           <ProductsFeatured />
 
           <header className="section__intro">
-            <h4>Why should you choose us?</h4>
+            <h4>Lý do bạn nên chọn SoleAuthenticity?</h4>
           </header>
 
           <ul className="shop-data-items">
             <li>
               <i className="icon-shipping"></i>
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
+                <h4>Uy tín</h4>
                 <p>
-                  All purchases over $199 are eligible for free shipping via
-                  USPS First Class Mail.
+                  Chúng tôi cam kết đảm bảo tất cả sản phẩm liên kết từ các cửa
+                  hàng uy tín là hàng chính hãng.
                 </p>
               </div>
             </li>
@@ -86,10 +89,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-payment"></i>
               <div className="data-item__content">
-                <h4>Easy Payments</h4>
+                <h4>Review chất lượng</h4>
                 <p>
-                  All payments are processed instantly over a secure payment
-                  protocol.
+                  Đội ngũ nhận xét chất lượng của chúng tôi giúp khách hàng lựa
+                  chọn sản phẩm tốt nhất và phù hợp với nhu cầu của họ.
                 </p>
               </div>
             </li>
@@ -97,10 +100,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-cash"></i>
               <div className="data-item__content">
-                <h4>Money-Back Guarantee</h4>
+                <h4>Đảm bảo tiền mặt và chuyển khoản</h4>
                 <p>
-                  If an item arrived damaged or you have changed your mind, you
-                  can send it back for a full refund.
+                  Nếu một mặt hàng bị hư hỏng hoặc bạn đã thay đổi ý định, bạn
+                  có thể gửi lại mặt hàng đó để được hoàn lại toàn bộ tiền
                 </p>
               </div>
             </li>
@@ -108,10 +111,10 @@ const IndexPage = () => {
             <li>
               <i className="icon-materials"></i>
               <div className="data-item__content">
-                <h4>Finest Quality</h4>
+                <h4>Chất lượng tốt nhất</h4>
                 <p>
-                  Designed to last, each of our products has been crafted with
-                  the finest materials.
+                  Các sản phẩm mà chúng tôi cung cấp đều đảm bảo chất lượng tốt,
+                  sử dụng những vật liệu tốt nhất và bền bỉ theo thời gian.
                 </p>
               </div>
             </li>
@@ -133,7 +136,7 @@ const IndexPage = () => {
                   color: 'orange',
                 }}
               >
-                Authenticate
+                Xác thực
               </div>
               <br />
               <div
@@ -144,7 +147,7 @@ const IndexPage = () => {
                   color: 'black',
                 }}
               >
-                Your Favorite Brands Shoes
+                Thương hiệu giày yêu thích của bạn
               </div>
             </a>
           </h6>

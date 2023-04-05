@@ -19,8 +19,8 @@ const Productcrumb = ({ product }: ProductCrumbType) => {
             </div>
           </li>
           <li>
-            <div>
-              <a href="/products">All Products</a>
+            <div style={{marginLeft: '10px', marginTop: '-13px'}}>
+              <a href="/products">Sản phẩm</a>
             </div>
           </li>
           <li>

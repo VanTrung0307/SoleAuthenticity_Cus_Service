@@ -162,13 +162,17 @@ const CheckoutPage = () => {
     setSelectedQRCode(null)
   }
 
+  const handleContinueShopping = () => {
+    window.location.href = '/products';
+  }
+
   return (
     <Layout>
       <section className="cart">
         <form className="form">
           <div className="container">
             <div className="cart__intro">
-              <h3 className="cart__title">Shipping and Payment</h3>
+              <h3 className="cart__title">Vận chuyển và Thanh toán</h3>
               <CheckoutStatus step="checkout" />
             </div>
 
@@ -189,7 +193,7 @@ const CheckoutPage = () => {
                       <div>
                         <a style={{ borderRadius: '10px' }}>
                           <button className="btn btn--rounded btn--yellow">
-                            Log in
+                            Đăng nhập
                           </button>
                         </a>
                       </div>
@@ -200,13 +204,13 @@ const CheckoutPage = () => {
                 <div className="block">
                   {accountUser ? (
                     <a>
-                      <h3 className="block__title">Shipping information</h3>
+                      <h3 className="block__title">Thông tin vận chuyển</h3>
 
                       <div className="form__input-row form__input-row--two">
                         <div className="form__col">
                           <textarea
                             className="form__input form__input--sm"
-                            placeholder="Address"
+                            placeholder="Địa chỉ"
                             required
                             onChange={handleChangeInputAddress}
                           />
@@ -221,7 +225,7 @@ const CheckoutPage = () => {
 
               <div className="checkout__col-4">
                 <div className="block">
-                  <h3 className="block__title">Payment method</h3>
+                  <h3 className="block__title">Phương thức thanh toán</h3>
                   <div className="payment-options">
                     <select
                       className="payment-select"
@@ -302,11 +306,11 @@ const CheckoutPage = () => {
 
               <div className="checkout__col-2">
                 <div className="block">
-                  <h3 className="block__title">Your cart</h3>
+                  <h3 className="block__title">Giỏ hàng của bạn</h3>
                   <CheckoutItems />
 
                   <div className="checkout-total">
-                    <p>Total cost</p>
+                    <p>Tổng tiền</p>
                     <h3>{priceTotal} đ</h3>
                   </div>
                 </div>
@@ -316,13 +320,13 @@ const CheckoutPage = () => {
             <div className="cart-actions cart-actions--checkout">
               <Link href="/cart">
                 <a className="cart__btn-back">
-                  <i className="icon-left"></i> Back
+                  <i className="icon-left"></i> Quay Lại
                 </a>
               </Link>
 
               <div className="cart-actions__items-wrapper">
-                <button type="button" className="btn btn--rounded btn--border">
-                  Continue shopping
+                <button onClick={handleContinueShopping} type="button" className="btn btn--rounded btn--border">
+                  Tiếp tục mua sắm
                 </button>
                 {accountUser ? (
                   <button
@@ -330,11 +334,11 @@ const CheckoutPage = () => {
                     type="button"
                     className="btn btn--rounded btn--yellow"
                   >
-                    Proceed to payment
+                    Tiến hành thanh toán
                   </button>
                 ) : (
                   <Link href="/login">
-                    <a>Log In</a>
+                    <a>Đăng nhập</a>
                   </Link>
                 )}
 

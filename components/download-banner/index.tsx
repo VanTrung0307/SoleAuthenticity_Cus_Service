@@ -1,19 +1,20 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 
-const Download = () => {
+const   Download = () => {
   return (
     <section className="download">
       <div className="download-container">
         <div className="download-content">
           <h1 className="slogan-text">
-            WANT TO KNOW <a className="green-text">REAL</a> OR{' '}
-            <a className="red-text">REPLICA</a>?
+            BẠN MUỐN BIẾT <a className="green-text">HÀNG THẬT</a> HAY{' '}
+            <a className="red-text">HÀNG NHÁI</a>?
           </h1>
           <h1 className="slogan-text">
-            Download <a className="orange-text">SoleAuthenticity</a> now
+            Tải <a className="orange-text">SoleAuthenticity</a> ngay
           </h1>
           <h1 className="slogan-text">
-            for <a className="orange-text">AUTHENTICATION</a>
+            để <a className="orange-text">XÁC THỰC</a>
           </h1>
         </div>
         <div className="download-img">
@@ -52,7 +53,7 @@ const Download = () => {
         <div className="logo-right">
           <img
             className="authen"
-            src="/images/logos/applogo.png"
+            src="/images/logos/applogo-black.png"
             alt="authen"
           />
         </div>
