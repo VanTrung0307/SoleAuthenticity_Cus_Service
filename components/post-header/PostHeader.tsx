@@ -1,15 +1,10 @@
-import React from "react";
+import React from 'react'
 
 function Header(props: PostHeaderComponent) {
-
   return (
-    
     <section className="header-review w-full flex flex-col py-5 bg-[rgba(35,46,82,1)]">
-
       <div className="container flex flex-col  mx-auto my-32 p-10">
-        
         <div className="header-review-details flex items-center text-center">
-
           {/* <Link href="/reviews" type="button" className=" text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <FaAngleLeft />
           </Link> */}
@@ -27,21 +22,21 @@ function Header(props: PostHeaderComponent) {
           {props.title}
         </h1>
 
-        <p className="header-review-details-authorname font-bold text-left text-white inline mt-4 text-[10px] sm:text-[10px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]">Publish By {props.authorName}</p>
-
+        <p className="header-review-details-authorname font-bold text-left text-white inline mt-4 text-[10px] sm:text-[10px] md:text-[14px] lg:text-[14px] xl:text-[14px] 2xl:text-[16px]">
+          {props.tag}
+        </p>
       </div>
-      
     </section>
-  );
+  )
 }
 
-Header.defaultProps = {};
+Header.defaultProps = {}
 
 interface PostHeaderComponent {
-  title?: string;
+  title?: string
   description?: string
-  tag: "REVIEW",
-  authorName?: string;
+  tag: 'REVIEW'
+  authorName?: string
 }
 
-export default Header;
+export default Header

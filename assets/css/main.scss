@@ -18,6 +18,12 @@ body {
     format("truetype");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -3477,6 +3483,7 @@ h5 {
 .header-review {
   display: flex;
   justify-content: center;
+  margin-top: -50px;
 
   .header-review-details-title {
     font-size: 30px;
@@ -3533,6 +3540,7 @@ h5 {
   border-radius: 30px;
   background-color: #ffb100;
   margin-top: 50px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3768,4 +3776,322 @@ h5 {
 
 .fb-customerchat {
   display: block !important;
+}
+
+.blog-container {
+  display: flex;
+}
+
+.blog-card {
+  display: flex;
+  width: 350px; /* set the width of the card as per your requirement */
+  margin-left: 20px;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #f3f5f7;
+  border-radius: 30px;
+  text-align: center;
+}
+
+
+.blog-card_img img {
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.blog-card_body {
+  padding: 26px 20px 36px 20px;
+  margin-top: 300px;
+  margin-left: -319px;
+  width: 350px;
+}
+
+.blog-card_title {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  text-transform: capitalize;
+  font-size: 26px;
+  padding-bottom: 20px;
+}
+
+.blog-card_body p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+p.blog-card_author {
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+p.blog-card_author a {
+  color: #1b1c34;
+  font-style: italic;
+}
+
+p.blog-card_author a:hover {
+  font-weight: bold;
+}
+
+a.blog-read_more {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 1.1px;
+  background: #0f1616;
+  margin-top: 50px;
+  padding: 24px 0px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 70%;
+  transition: all 0.3s ease-in-out;
+}
+
+a.blog-read_more:hover {
+  box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.15);
+  background: #404040;
+}
+
+.blog-link {
+  position: fixed;
+  background-color: #d12322;
+  padding: 23px 40px;
+  right: -106px;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transform: rotate(-90deg);
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.1s ease-in-out;
+}
+
+.blog-link i {
+  padding-left: 7px;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+  background-color: black;
+}
+
+@media only screen and (max-width: 1441px) and (min-width: 1025px) {
+
+  .blog-card {
+    padding: 15px;
+  }
+
+  .blog-card_body {
+    padding: 15px;
+  }
+
+  .blog-card_title {
+    font-size: 22px;
+    padding-bottom: 14px;
+  }
+
+  .blog-card_body p {
+    font-size: 16px;
+  }
+
+  a.blog-read_more {
+    padding: 19px 0;
+    width: 60%;
+    font-size: 11px;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .blog-card {
+    padding: 20px 10px;
+  }
+
+  .blog-card_body {
+    padding: 7px;
+  }
+
+  .blog-card_title {
+    font-size: 20px;
+    padding-bottom: 7px;
+  }
+
+  .blog-card_body p {
+    font-size: 14px;
+  }
+
+  a.blog-read_more {
+    padding: 15px 0;
+    margin-top: 20px;
+  }
+}
+
+.blog-img{
+  width: 950px;
+  height: 600px;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.blog-status {
+  width: 950px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  border-radius: 30px;
+}
+
+@media (min-width: 768px) {
+  .blog-status {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.store-card-container{
+	margin: 30px;
+  width: 100%;
+}
+
+.row{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.store-card-image{
+	background: #50A7FF;
+  border-radius: 30px;
+	position: relative;
+	flex: 1;
+	max-width: 320px;
+	height: 190px;
+	margin: 20px;
+	overflow: hidden;
+  cursor: pointer;
+}
+
+.store-card-image img{
+  width: 100%;
+	height: 300px;
+	opacity: 0.8;
+	position: relative;
+	vertical-align: top;
+	transition: 0.6s;
+  filter: brightness(70%);
+	transition-property: opacity;
+}
+
+.store-card-image:hover img{
+	opacity: 1;
+}
+
+.store-card-image .details{
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.store-card-image .details h2{
+	text-align: center;
+	font-size: 35px;
+	text-transform: uppercase;
+	font-weight: 300;
+	margin-top: 70px;
+	transition: 0.4s;
+	transition-property: transform;
+  color: #fff;
+}
+
+.store-card-image .details h2 span{
+	font-weight: 900;
+}
+
+.store-card-image:hover .details h2{
+	transform: translateY(-30px);
+}
+
+.store-card-image .details p{
+	margin: 30px 30px 0 30px;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	opacity: 0;
+	transition: 0.6s;
+	transition-property: opacity, transform;
+  color: #fff;
+}
+
+.store-card-image:hover .details p{
+	opacity: 1;
+	transform: translateY(-40px);
+}
+
+.more{
+	position: absolute;
+	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	bottom: -60px;
+	transition: 0.6s;
+	transition-property: bottom;
+}
+
+.store-card-image:hover .more{
+	bottom: 0;
+}
+
+.more .read-more{
+	color: #000;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.more .read-more span{
+	font-weight: 900;
+}
+
+.more .icon-links i{
+	color: #000;
+	font-size: 20px;
+}
+
+.more .icon-links a:not(:last-child) i{
+	margin-right: 20px;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 1080px){
+	.store-card-image{
+		flex: 100%;
+		max-width: 480px;
+	}
+}
+
+@media (max-width: 400px){
+	.store-card-image .details p{
+		font-size: 16px;
+	}
+
+	.more .read-more, .more .icon-links a i{
+		font-size: 18px;
+	}
 }

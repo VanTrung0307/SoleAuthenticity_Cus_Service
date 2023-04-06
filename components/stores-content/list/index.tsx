@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import StoresLoading from './loading/index.js';
-import StoreItem from './../../store-item/index';
+import { useEffect, useState } from 'react';
 import { StoreTypeList } from 'types/index.js';
+import StoreCard from './../../store-item/StoreCard';
+import StoresLoading from './loading/index.js';
 
 
 const StoresContent = () => {
@@ -34,7 +34,7 @@ const StoresContent = () => {
       {data &&
         <section className="products-list">
           {data.map((item)  => (
-            <StoreItem 
+            <StoreCard 
               id={item.id} 
               name={item.name}
               address={item.address}
