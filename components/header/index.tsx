@@ -181,10 +181,14 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <button className="site-nav__btn">
             {accountUser ? (
               <Fragment>
-                <a>{`$accountUser`}</a>
+                <a>{`${accountUser.name}`}</a>
               </Fragment>
             ) : (
-              <a>Tài khoản</a>
+              <Link href="/login">
+                <div style={{ borderRadius: '10px', cursor: 'pointer' }}>
+                  <a>Đăng nhập</a>
+                </div>
+              </Link>
             )}
           </button>
         </nav>
