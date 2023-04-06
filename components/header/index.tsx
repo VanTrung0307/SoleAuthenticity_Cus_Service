@@ -182,6 +182,14 @@ const Header = ({ isErrorPage }: HeaderType) => {
             {accountUser ? (
               <Fragment>
                 <a>{`${accountUser.name}`}</a>
+                <a
+                  type="button"
+                  onClick={handleLogout}
+                  style={{ borderRadius: '0 0 10px 10px', cursor: 'pointer' }}
+                >
+                  <img src="/images/logos/logout.png" />
+                  Đăng xuất
+                </a>
               </Fragment>
             ) : (
               <Link href="/login">
