@@ -140,10 +140,10 @@ const CheckoutPage = () => {
     }
   }
 
-  const handleClick = (e: any) => {
-    e.preventDefault()
-    router.push('/cart/checkout')
-  }
+  // const handleClick = (e: any) => {
+  //   e.preventDefault()
+  //   router.push('/cart/checkout')
+  // }
 
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('COD')
   const [selectedQRCode, setSelectedQRCode] = useState(null)
@@ -178,17 +178,21 @@ const CheckoutPage = () => {
             </div>
 
             <div className="checkout-content">
-              <div className="checkout__col-6">
+              <div className="checkout__col-4">
                 <div className="checkout__btns">
                   {accountUser ? (
-                    <a
-                      href="#"
-                      onClick={handleClick}
-                      style={{
-                        borderRadius: '10px 10px 0 0',
-                        cursor: 'pointer',
-                      }}
-                    >{`${accountUser.name}`}</a>
+                    // <a
+                    //   href="#"
+                    //   onClick={handleClick}
+                    //   style={{
+                    //     borderRadius: '10px 10px 0 0',
+                    //     cursor: 'pointer',
+                    //   }}
+                    // >{`${accountUser.name}`}</a>
+                    <div className="block" style={{ marginBottom: '40px' }}>
+                      <h3 className="block__title">Tên khách hàng</h3>
+                      <p>{`${accountUser.name}`}</p>
+                    </div>
                   ) : (
                     <Link href="/login">
                       <div>
@@ -202,29 +206,6 @@ const CheckoutPage = () => {
                   )}
                 </div>
 
-                <div className="block">
-                  {accountUser ? (
-                    <a>
-                      <h3 className="block__title">Thông tin vận chuyển</h3>
-
-                      <div className="form__input-row form__input-row--two">
-                        <div className="form__col">
-                          <textarea
-                            className="form__input form__input--sm"
-                            placeholder="Địa chỉ"
-                            required
-                            onChange={handleChangeInputAddress}
-                          />
-                        </div>
-                      </div>
-                    </a>
-                  ) : (
-                    ''
-                  )}
-                </div>
-              </div>
-
-              <div className="checkout__col-4">
                 <div className="block">
                   <h3 className="block__title">Phương thức thanh toán</h3>
                   <div className="payment-options">
@@ -256,7 +237,7 @@ const CheckoutPage = () => {
                           onClick={() => handleQRCodeClick('eBanking')}
                         />
                       </div>
-                      <span className="or-span">hoặc</span>
+                      <div className="or-span">hoặc</div>
                       <div className="qr-code-item">
                         <img
                           className="QR-Banking"
@@ -268,11 +249,11 @@ const CheckoutPage = () => {
                     </div>
 
                     <div className="notice-banking">
-                      <p className="qr-code-notice">
-                        <strong>*Lưu ý:</strong>Các bạn nhớ ghi rõ nội dung như
+                      <p className="qr-code-notice1">
+                        <strong>*Lưu ý: </strong>Các bạn nhớ ghi rõ nội dung như
                         sau:
                       </p>
-                      <p className="qr-code-notice">
+                      <p className="qr-code-notice2">
                         `Họ và tên` đã gửi tiền `Tên sản phẩm`
                       </p>
                     </div>
@@ -303,6 +284,33 @@ const CheckoutPage = () => {
                     X
                   </button>
                 </Modal>
+              </div>
+
+              <div className="checkout__col-6">
+              <div className="block">
+                {accountUser ? (
+                    <a>
+                      <h3 className="block__title">Thông tin vận chuyển</h3>
+
+                      <div className="form__input-row form__input-row--two">
+                        <div className="form__col">
+                          <textarea
+                            className="form__input-checkout form__input--sm"
+                            placeholder="Địa chỉ: Số nhà + Tên đường + Quận + Phường + TP.HCM"
+                            required
+                            // value={address}
+                            onChange={handleChangeInputAddress}
+                            rows={6}
+                            maxLength={1000}
+                            //onClick={addressValidate}
+                          />
+                        </div>
+                      </div>
+                    </a>
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
 
               <div className="checkout__col-2">

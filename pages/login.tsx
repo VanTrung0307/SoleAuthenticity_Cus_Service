@@ -78,7 +78,7 @@ const LoginPage = () => {
               style={{
                 width: '300px',
                 height: '225px',
-                marginLeft: '70px',
+                marginLeft: "40px",
                 marginTop: '-70px',
                 textAlign: 'center',
                 display: 'flex',
@@ -91,9 +91,9 @@ const LoginPage = () => {
               <div className="form__input-row">
                 <input
                   className="form__input"
-                  placeholder="email"
+                  placeholder="Email"
                   type="text"
-                  name="email"
+                  name="Email"
                   ref={register({
                     required: true,
                     pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -117,7 +117,7 @@ const LoginPage = () => {
                 <input
                   className="form__input"
                   type="password"
-                  placeholder="mật khẩu"
+                  placeholder="Mật khẩu"
                   name="password"
                   ref={register({ required: true })}
                 />
@@ -141,7 +141,7 @@ const LoginPage = () => {
                       ref={register({ required: false })}
                     />
                     <span className="checkbox__check"></span>
-                    <p>Giữ đăng nhập</p>
+                    <p>Nhớ đăng nhập</p>
                   </label>
                 </div>
                 <a
@@ -152,10 +152,27 @@ const LoginPage = () => {
                 </a>
               </div>
 
-              <div
-                className="form__btns"
-                style={{ display: 'flex', justifyContent: 'center' }}
+              <button
+                type="submit"
+                className="btn btn--rounded btn--yellow btn-submit"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  margin: "0 auto",
+                  marginTop: '20px'
+                  
+                }}
               >
+                Đăng nhập
+              </button>
+
+              <div className="divider">
+                <hr/>
+                  <p>Or</p>
+                <hr/>
+              </div>
+              <div className="form__btns" style={{ display: 'flex', justifyContent: 'center' }}>
                 {/* <button type="button" className="btn-social fb-btn">
                   <i className="icon-facebook"></i>Facebook
                 </button> */}
@@ -163,31 +180,16 @@ const LoginPage = () => {
                   type="button"
                   className="btn-social google-btn"
                   onClick={handleLoginWithGoogle}
-                  style={{ alignItems: 'center' }}
+                  style = {{alignItems: 'center'}}
                 >
                   <img src="/images/icons/google.svg" alt="google" />
-                  Đăng nhập bằng Google
+                  Tiếp tục với Google
                 </button>
               </div>
 
-              <button
-                type="submit"
-                className="btn btn--rounded btn--yellow btn-submit"
-                style={{
-                  width: '70%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  margin: '0 auto',
-                  marginTop: '20px',
-                }}
-              >
-                Đăng nhập
-              </button>
-
-              <p className="form__signup-link">
+              {/* <p className="form__signup-link">
               Chưa phải là thành viên? <a href="/register">Đăng kí</a>
-              </p>
+              </p> */}
             </form>
           </div>
         </div>

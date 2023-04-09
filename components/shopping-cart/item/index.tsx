@@ -59,7 +59,7 @@ const ShoppingCart = ({ imgPath, name, id, size, count, salePrice, noDiscount }:
       </td>
       {/* <td className="cart-item-before" data-label="Color">{color}</td> */}
       <td className="cart-item-before" data-label="Size">{size}</td>
-      <td>
+      <td className="cart-item-before" data-label="Số lượng">
         <div className="quantity-button">
           <button type="button" onClick={() => setProductCount(count - 1)} className="quantity-button__btn">
             -
@@ -70,7 +70,7 @@ const ShoppingCart = ({ imgPath, name, id, size, count, salePrice, noDiscount }:
           </button>
         </div>
       </td>
-      <td>{(salePrice ? salePrice : noDiscount).toLocaleString()} đ</td>
+      <td className="cart-item-before" data-label="Tiền">{(salePrice ? salePrice : noDiscount).toLocaleString()} đ</td>
       <td className="cart-item-cancel"><i className="icon-cancel" onClick={() => removeFromCart()}></i></td>
     </tr>
   )

@@ -21,7 +21,7 @@ const Footer = () => {
             </h6>
             <p>
               SoleAuthenticity cung cấp cho khách hàng những mặt hàng chất lượng
-              và tốt nhất từ những cửa hàng đã liên kết với chung - quan trọng
+              và tốt nhất từ những cửa hàng đã liên kết với chúng tôi - quan trọng
               nhất là hàng chính hãng
             </p>
             <ul className="site-footer__social-networks">
