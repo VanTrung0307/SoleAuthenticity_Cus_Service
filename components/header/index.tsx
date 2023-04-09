@@ -178,27 +178,27 @@ const Header = ({ isErrorPage }: HeaderType) => {
               Second Hand
             </a>
           </Link> */}
-          <button className="site-nav__btn">
             {accountUser ? (
               <Fragment>
-                <a>{`${accountUser.name}`}</a>
                 <a
+                  className="site-nav__btn nav-link nav-link-grow-up"
                   type="button"
                   onClick={handleLogout}
                   style={{ borderRadius: '0 0 10px 10px', cursor: 'pointer' }}
                 >
-                  <img src="/images/logos/logout.png" />
                   Đăng xuất
                 </a>
               </Fragment>
             ) : (
+              // <a>Tài khoản</a>
               <Link href="/login">
-                <div style={{ borderRadius: '10px', cursor: 'pointer' }}>
-                  <a>Đăng nhập</a>
-                </div>
+                    <div style={{ borderRadius: '10px', cursor: 'pointer' }}>
+                      <a className="site-nav__btn nav-link nav-link-grow-up">
+                        Đăng nhập
+                      </a>
+                    </div>
               </Link>
             )}
-          </button>
         </nav>
 
         <div className="site-header__actions">

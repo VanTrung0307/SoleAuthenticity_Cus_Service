@@ -15,7 +15,7 @@ const Reviewcrumb = () => {
               </div>
             </Link>
           </li>
-          <li>Các bài đánh giá</li>
+          <li>Bài đánh giá</li>
         </ul>
       </div>
     </section>

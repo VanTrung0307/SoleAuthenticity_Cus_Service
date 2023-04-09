@@ -8,6 +8,8 @@ function Pagination() {
         textAlign: "center",
         alignItems: "center",
         fontWeight: "normal",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <span style={{ fontSize: "normal", color: "black" }}>
@@ -16,7 +18,11 @@ function Pagination() {
         <span style={{ color: "orange", fontWeight: "bold" }}>100</span> Mục
       </span>
 
-      <div style={{ display: "inline-flex", paddingLeft: "150px" }}>
+      <div style={{ 
+        display: "inline-flex", 
+        justifyContent: "center",
+        marginTop: "30px", 
+        }}>
         <Link href="#">
           <i className="icon-left"></i>
         </Link>

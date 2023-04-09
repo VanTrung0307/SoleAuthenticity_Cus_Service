@@ -9,7 +9,7 @@ const Brandcrumb = () => (
             <i className="icon-home"></i>
           </a>
         </li>
-        <li>All Brands</li>
+        <li>Thương hiệu</li>
       </ul>
     </div>
   </section>
